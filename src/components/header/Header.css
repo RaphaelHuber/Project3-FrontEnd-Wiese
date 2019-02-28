@@ -10,3 +10,21 @@
   margin-right: auto;
   position: absolute;
 }
+
+.containerCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.containerRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.marginLeft1 {
+  margin: auto auto auto 25%;
+}
+
+.marginRight1 {
+  margin: auto 25% auto auto;
+}
