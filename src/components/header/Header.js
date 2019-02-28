@@ -1,13 +1,13 @@
-import lakeMain from '../../../public/img/lakeMain.png';
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
-// import './Header.css';
+import Navebar from '../navbar/Navbar.js'
+import './Header.css';
+import energySymbols from '../energySymbols/EnergySymbols.js'
 
 const header = () => {
   return (
     <div className="header">
-      <img src={ lakeMain } />
+      <Navebar />
+      <energySymbols />
     </div>
   )
 }
