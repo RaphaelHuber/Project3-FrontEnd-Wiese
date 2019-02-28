@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navbar, Nav, Form, Button } from 'react-bootstrap';
 import './Navbar.css';
+import LogIn from '../modals/logIn/LogIn.js';
 
 const navbar = () => {
   return (
@@ -15,7 +16,7 @@ const navbar = () => {
           <Nav.Link href="#myProjects">My Projects</Nav.Link>
         </Nav>
         <Form inline>
-          <Button variant="outline-success">Login</Button>
+          <LogIn />
         </Form>
       </Navbar.Collapse>
     </Navbar>

@@ -2,23 +2,22 @@ import React from 'react';
 import Navebar from '../navbar/Navbar.js'
 import './Header.css';
 import EnergySymbols from '../energySymbols/EnergySymbols.js'
-import { Button } from 'react-bootstrap';
-// import ModalInscription from '../modalInscription/ModalInscription.js'
+import InvSignUp from '../modals/invSignUp/InvSignUp.js'
+import OwnerSignUp from '../modals/ownerSignUp/OwnerSignUp.js'
 
-const header = () => {
+const Header = () => {
   return (
     <div className="header">
       <Navebar />
       <div className="containerCol">
         <EnergySymbols />
         <div className="containerRow">
-        <Button className="marginLeft1" color="success">success</Button>
-        <Button className="marginRight1" color="success">success</Button>
+          <InvSignUp className=""/>
+          <OwnerSignUp className=""/>
         </div>
       </div>
-      {/* <ModalInscription /> */}
     </div>
   )
 }
 
-export default header;
+export default Header;
