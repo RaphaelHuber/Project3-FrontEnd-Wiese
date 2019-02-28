@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button, Modal } from 'react-bootstrap';
-import './OwnerSignUp.css';
+import './LogIn.css';
 
-class OwnerSignUp extends React.Component {
+class LogIn extends React.Component {
   constructor(props, context) {
     super(props, context);
 
@@ -24,17 +24,15 @@ class OwnerSignUp extends React.Component {
 
   render() {
     return (
-      <div className="marginRight1">
-        <Button variant="primary" onClick={this.handleShow}>Create a Project</Button>
+      <div>
+        <Button variant="primary" onClick={this.handleShow}>Log in</Button>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Sign Up</Modal.Title>
+            <Modal.Title>Log in</Modal.Title>
           </Modal.Header>
           <Modal.Body>E-Mail</Modal.Body>
-          <Modal.Body>Company</Modal.Body>
           <Modal.Body>Password</Modal.Body>
-          <Modal.Body>Repeat Password</Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={this.handleClose}>
               Close
@@ -49,4 +47,4 @@ class OwnerSignUp extends React.Component {
   }
 }
 
-export default OwnerSignUp;
+export default LogIn;

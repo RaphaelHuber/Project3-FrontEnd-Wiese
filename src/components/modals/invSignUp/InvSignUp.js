@@ -31,8 +31,7 @@ class InvSignUp extends React.Component {
           <Modal.Header closeButton>
             <Modal.Title>Sign Up</Modal.Title>
           </Modal.Header>
-          <Modal.Body>Name</Modal.Body>
-          <Modal.Body>Surname</Modal.Body>
+          <Modal.Body>E-Mail</Modal.Body>
           <Modal.Body>Password</Modal.Body>
           <Modal.Body>Repeat Password</Modal.Body>
           <Modal.Footer>
