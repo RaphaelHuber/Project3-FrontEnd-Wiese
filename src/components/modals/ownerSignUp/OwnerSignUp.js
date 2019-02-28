@@ -1,6 +1,7 @@
 import React from 'react';
-import { Button, Modal } from 'react-bootstrap';
+import { Button, Modal, Form } from 'react-bootstrap';
 import './OwnerSignUp.css';
+import { Col, FormGroup, Label, Input} from 'reactstrap';
 
 class OwnerSignUp extends React.Component {
   constructor(props, context) {
@@ -31,14 +32,64 @@ class OwnerSignUp extends React.Component {
           <Modal.Header closeButton>
             <Modal.Title>Sign Up</Modal.Title>
           </Modal.Header>
-          <Modal.Body>E-Mail</Modal.Body>
-          <Modal.Body>Company</Modal.Body>
-          <Modal.Body>Password</Modal.Body>
-          <Modal.Body>Repeat Password</Modal.Body>
+          <Form className="form">
+            <Col>
+              <FormGroup>
+                <Label>Name</Label>
+                <Input
+                  type="text"
+                  name="name"
+                  id=""
+                  placeholder="myname"
+                />
+              </FormGroup>
+            </Col>
+            <Col>
+              <FormGroup>
+                <Label>Surname</Label>
+                <Input
+                  type="text"
+                  name="surname"
+                  id=""
+                  placeholder="mysurname"
+                />
+              </FormGroup>
+            </Col>
+            <Col>
+              <FormGroup>
+                <Label>Company</Label>
+                <Input
+                  type="text"
+                  name="company"
+                  id=""
+                  placeholder="mycompany"
+                />
+              </FormGroup>
+            </Col>
+            <Col>
+              <FormGroup>
+                <Label>Email</Label>
+                <Input
+                  type="email"
+                  name="email"
+                  id="exampleEmail"
+                  placeholder="myemail@email.com"
+                />
+              </FormGroup>
+            </Col>
+            <Col>
+              <FormGroup>
+                <Label for="examplePassword">Password</Label>
+                <Input 
+                  type="password"
+                  name="password"
+                  id="examplePassword"
+                  placeholder="********"
+                />
+              </FormGroup>
+            </Col>
+          </Form>
           <Modal.Footer>
-            <Button variant="secondary" onClick={this.handleClose}>
-              Close
-            </Button>
             <Button variant="primary" onClick={this.handleClose}>
               Send
             </Button>

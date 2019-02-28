@@ -1,6 +1,7 @@
 import React from 'react';
-import { Button, Modal } from 'react-bootstrap';
+import { Button, Modal, Form } from 'react-bootstrap';
 import './InvSignUp.css';
+import { Col, FormGroup, Label, Input} from 'reactstrap';
 
 class InvSignUp extends React.Component {
   constructor(props, context) {
@@ -24,20 +25,60 @@ class InvSignUp extends React.Component {
 
   render() {
     return (
-      <div className="marginLeft1">
+      <div className="marginRight1">
         <Button variant="primary" onClick={this.handleShow}>Become an Investor</Button>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Sign Up</Modal.Title>
           </Modal.Header>
-          <Modal.Body>E-Mail</Modal.Body>
-          <Modal.Body>Password</Modal.Body>
-          <Modal.Body>Repeat Password</Modal.Body>
+          <Form className="form">
+            <Col>
+              <FormGroup>
+                <Label>Name</Label>
+                <Input
+                  type="text"
+                  name="name"
+                  id=""
+                  placeholder="myname"
+                />
+              </FormGroup>
+            </Col>
+            <Col>
+              <FormGroup>
+                <Label>Surname</Label>
+                <Input
+                  type="text"
+                  name="surname"
+                  id=""
+                  placeholder="mysurname"
+                />
+              </FormGroup>
+            </Col>
+            <Col>
+              <FormGroup>
+                <Label>Email</Label>
+                <Input
+                  type="email"
+                  name="email"
+                  id="exampleEmail"
+                  placeholder="myemail@email.com"
+                />
+              </FormGroup>
+            </Col>
+            <Col>
+              <FormGroup>
+                <Label for="examplePassword">Password</Label>
+                <Input 
+                  type="password"
+                  name="password"
+                  id="examplePassword"
+                  placeholder="********"
+                />
+              </FormGroup>
+            </Col>
+          </Form>
           <Modal.Footer>
-            <Button variant="secondary" onClick={this.handleClose}>
-              Close
-            </Button>
             <Button variant="primary" onClick={this.handleClose}>
               Send
             </Button>
