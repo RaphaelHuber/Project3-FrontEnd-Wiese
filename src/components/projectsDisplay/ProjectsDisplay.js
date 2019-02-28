@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import ProjectCard from './projectCard/projectCard';
+import { Container, Row, Col } from 'react-bootstrap';
 
 class projectsDisplay extends Component {
   constructor(props){
@@ -24,21 +25,15 @@ class projectsDisplay extends Component {
       return <h1></h1>
     }
     return (
-      <div>
-        <h1>AAAAAAAAAA</h1>
-        <h1>{this.state.allProjects.data[0].country}</h1>
-        <ProjectCard />
-      </div>
+      <Container>
+        <Row>
+            {this.state.allProjects.data.map((project) => {
+              return(<Col xs={4}><ProjectCard projectData = {project} /></Col>)
+            })}
+        </Row>
+      </Container>
     );
   }
 }
 
 export default projectsDisplay;
-
-
-// 341 - Itaú
-// Ag 9652
-// CC 11366-4
-
-// Essa deve ser a conta principal. A outra deve ser excluída (foi fechada)
-// Obrigado!
