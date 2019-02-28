@@ -3,6 +3,7 @@ import Navebar from '../navbar/Navbar.js'
 import './Header.css';
 import EnergySymbols from '../energySymbols/EnergySymbols.js'
 import { Button } from 'react-bootstrap';
+import ModalInscription from '../modalInscription/ModalInscription.js'
 
 const header = () => {
   return (
@@ -15,6 +16,7 @@ const header = () => {
         <Button className="marginRight1" color="success">success</Button>
         </div>
       </div>
+      <ModalInscription />
     </div>
   )
 }
