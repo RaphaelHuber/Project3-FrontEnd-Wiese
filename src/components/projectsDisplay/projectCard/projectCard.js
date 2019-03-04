@@ -1,19 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap';
 
 class projectCard extends React.Component {
   render() {
     return (
       <Card>
-        <Card.Img variant="top" src= "https://vignette.wikia.nocookie.net/ultimate-pokemon-fanon/images/5/5e/Sneaselfemale_.jpeg/revision/latest?cb=20180630162351" />
+        <Card.Img variant="top" src={ this.props.projectData.pictures[0] } />
         <Card.Body>
-          <Card.Title>{this.props.projectData.country}</Card.Title>
+          <Card.Title>{ this.props.projectData.country }</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the bulk of
-            the card's content.
+          { this.props.projectData.description }
           </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Button variant="primary">More</Button>
         </Card.Body>
       </Card>
     );
