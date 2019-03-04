@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button, Modal, Form } from 'react-bootstrap';
-import './OwnerSignUp.css';
+import './SignUp.css';
 import { Col, FormGroup, Label, Input} from 'reactstrap';
 
-class OwnerSignUp extends React.Component {
+class SignUp extends React.Component {
   constructor(props, context) {
     super(props, context);
 
@@ -25,8 +25,8 @@ class OwnerSignUp extends React.Component {
 
   render() {
     return (
-      <div className="marginRight1">
-        <Button variant="primary" onClick={this.handleShow}>Create a Project</Button>
+      <div className="center">
+        <Button variant="primary" onClick={this.handleShow}>Sign Up for Free</Button>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
@@ -52,17 +52,6 @@ class OwnerSignUp extends React.Component {
                   name="surname"
                   id=""
                   placeholder="mysurname"
-                />
-              </FormGroup>
-            </Col>
-            <Col>
-              <FormGroup>
-                <Label>Company</Label>
-                <Input
-                  type="text"
-                  name="company"
-                  id=""
-                  placeholder="mycompany"
                 />
               </FormGroup>
             </Col>
@@ -100,4 +89,4 @@ class OwnerSignUp extends React.Component {
   }
 }
 
-export default OwnerSignUp;
+export default SignUp;
