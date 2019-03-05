@@ -5,13 +5,13 @@ import { Card, Button } from 'react-bootstrap';
 class projectCard extends React.Component {
   render() {
     return (
-      <Card>
-        <Card.Img variant="top" src= "https://vignette.wikia.nocookie.net/ultimate-pokemon-fanon/images/5/5e/Sneaselfemale_.jpeg/revision/latest?cb=20180630162351" />
+      <Card style={{ height: '15rem' }}>
+        <Card.Img variant="top" src=""/>
         <Card.Body>
-          <Card.Title>{this.props.projectData.country}</Card.Title>
+          <Card.Title>{this.props.projectData.name}</Card.Title>
+          <Card.Subtitle className="mb-2 text-muted">{this.props.projectData.name} - {this.props.projectData.country}</Card.Subtitle>
           <Card.Text>
-            Some quick example text to build on the card title and make up the bulk of
-            the card's content.
+          {this.props.projectData.description}
           </Card.Text>
           <Button variant="primary">Go somewhere</Button>
         </Card.Body>
