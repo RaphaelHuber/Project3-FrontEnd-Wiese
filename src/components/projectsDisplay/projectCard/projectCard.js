@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap';
 
 class projectCard extends React.Component {
@@ -13,7 +12,7 @@ class projectCard extends React.Component {
           <Card.Text>
           {this.props.projectData.description}
           </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Button variant="primary">More</Button>
         </Card.Body>
       </Card>
     );

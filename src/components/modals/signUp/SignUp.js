@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button, Modal, Form } from 'react-bootstrap';
-import './LogIn.css';
-import { Col, Group, FormGroup, Label, Input} from 'reactstrap';
+import './SignUp.css';
+import { Col, FormGroup, Label, Input} from 'reactstrap';
 
-class LogIn extends React.Component {
+class SignUp extends React.Component {
   constructor(props, context) {
     super(props, context);
 
@@ -25,14 +25,36 @@ class LogIn extends React.Component {
 
   render() {
     return (
-      <div>
-        <Button variant="primary" onClick={this.handleShow}>Log in</Button>
+      <div className="center">
+        <Button variant="primary" onClick={this.handleShow}>Sign Up for Free</Button>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Log in</Modal.Title>
+            <Modal.Title>Sign Up</Modal.Title>
           </Modal.Header>
           <Form className="form">
+            <Col>
+              <FormGroup>
+                <Label>Name</Label>
+                <Input
+                  type="text"
+                  name="name"
+                  id=""
+                  placeholder="myname"
+                />
+              </FormGroup>
+            </Col>
+            <Col>
+              <FormGroup>
+                <Label>Surname</Label>
+                <Input
+                  type="text"
+                  name="surname"
+                  id=""
+                  placeholder="mysurname"
+                />
+              </FormGroup>
+            </Col>
             <Col>
               <FormGroup>
                 <Label>Email</Label>
@@ -67,4 +89,4 @@ class LogIn extends React.Component {
   }
 }
 
-export default LogIn;
+export default SignUp;
