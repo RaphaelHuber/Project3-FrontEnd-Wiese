@@ -7,7 +7,7 @@ import SignUp from '../modals/signUp/SignUp.js'
 const Header = () => {
   return (
     <div className="header">
-      <Navebar />
+      <Navebar className="margin1" />
       <div className="containerCol">
         <EnergySymbols className=""/>
         <SignUp className="center"/>

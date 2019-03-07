@@ -1,0 +1,17 @@
+.footer {
+  margin-top: 5%;
+}
+
+.styleNone {
+  list-style-type: none;
+  min-width: 40% !important;
+}
+
+.margin1 {
+  margin: 8% 48%;
+  padding: 0px;
+}
+
+.font1 {
+  color: rgba(0,0,0,.9);
+}

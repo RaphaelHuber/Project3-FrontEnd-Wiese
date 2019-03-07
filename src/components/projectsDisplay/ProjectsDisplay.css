@@ -1,0 +1,12 @@
+.flexWrap {
+  display: flex;
+  flex-wrap: wrap; 
+}
+
+.minWidth {
+  min-width: 240px;
+}
+
+.marginMain {
+  margin: 5% auto;
+}

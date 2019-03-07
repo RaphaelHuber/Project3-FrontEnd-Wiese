@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import ProjectCard from './projectCard/projectCard';
 import { Container, Row, Col } from 'react-bootstrap';
+import './ProjectsDisplay.css';
 
 class projectsDisplay extends Component {
   constructor(props){
@@ -25,10 +26,10 @@ class projectsDisplay extends Component {
       return <h1></h1>
     }
     return (
-      <Container>
+      <Container className="flexWrap marginMain">
         <Row>
             {this.state.allProjects.data.map((project) => {
-              return(<Col xs={4}><ProjectCard projectData = {project} /></Col>)
+              return(<Col className="minWidth" xs={4}><ProjectCard projectData = {project} /></Col>)
             })}
         </Row>
       </Container>
