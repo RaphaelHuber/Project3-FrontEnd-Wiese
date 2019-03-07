@@ -1,0 +1,26 @@
+.marginMain {
+  margin: 4% 10%;
+}
+
+.marginFilterComp {
+  margin: auto 18px;
+}
+
+.barStyle {
+  border-radius: 25px;
+}
+
+
+
+img {
+  width: 30px;
+}
+
+.containerRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.boxSize1 {
+  width: 400px;
+}
