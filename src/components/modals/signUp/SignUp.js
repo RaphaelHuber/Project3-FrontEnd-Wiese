@@ -26,7 +26,7 @@ class SignUp extends React.Component {
   render() {
     return (
       <div className="center">
-        <Button variant="primary" onClick={this.handleShow}>Sign Up for Free</Button>
+        <Button className="btnMain" variant="primary" onClick={this.handleShow}>Sign Up for Free</Button>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>

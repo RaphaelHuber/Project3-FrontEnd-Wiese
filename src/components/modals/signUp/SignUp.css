@@ -41,3 +41,7 @@
 .center {
   margin: 0 auto;
 }
+
+.btnMain {
+  font-size: 1.8vw !important;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, Form, NavDropdown, FormControl, Button } from 'react-bootstrap';
+import { Navbar, Nav, Form, FormControl} from 'react-bootstrap';
 import './Filter.css';
 import MultiSelect from './multiSelect/MultiSelect.js';
 
@@ -10,19 +10,19 @@ const test = [
 
 const filter = () => {
   return (
-    <Navbar bg="invisible" expand="lg" className="marginMain barStyle">
+    <Navbar bg="invisible" expand="lg" className="filter-marginMain filter-barStyle">
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Form inline>
             <FormControl type="text" placeholder="Search..." className="" />
           </Form>
-          <Nav.Link className="marginFilterComp" href="">Return</Nav.Link>
-          <Nav.Link className="marginFilterComp" href="">Periode of time</Nav.Link>
-          <Nav.Link className="marginFilterComp" href="">Size</Nav.Link>
-          <Nav.Link className="marginFilterComp" href="">Min Investment</Nav.Link>
+          <Nav.Link className="filter-marginFilterComp" href="">ROI</Nav.Link>
+          <Nav.Link className="filter-marginFilterComp" href="">Time Periode</Nav.Link>
+          <Nav.Link className="filter-marginFilterComp" href="">Project Size</Nav.Link>
+          <Nav.Link className="filter-marginFilterComp" href="">Min. Investment</Nav.Link>
         </Nav>
-        <div className="boxSize1">
+        <div className="filter-boxSize1">
           <MultiSelect/>
         </div>
       </Navbar.Collapse>

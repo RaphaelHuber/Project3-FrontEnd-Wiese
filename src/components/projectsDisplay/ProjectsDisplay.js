@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import ProjectCard from './projectCard/projectCard';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import './ProjectsDisplay.css';
 
 class projectsDisplay extends Component {
@@ -28,10 +27,11 @@ class projectsDisplay extends Component {
     return (
       <Container className="flexWrap marginMain">
         <Row>
-            {this.state.allProjects.data.map((project) => {
-              return(<Col className="minWidth" xs={4}><ProjectCard projectData = {project} /></Col>)
-            })}
+          {this.state.allProjects.data.map((project) => {
+            return(<Col className="minWidth" xs={4}><ProjectCard projectData = {project} /></Col>)
+          })}
         </Row>
+        <Button className="btnSecondary center marginBtn1" variant="primary">Load More</Button>
       </Container>
     );
   }
