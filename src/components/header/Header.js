@@ -1,19 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Navebar from '../navbar/Navbar.js'
 import './Header.css';
 import EnergySymbols from '../energySymbols/EnergySymbols.js'
 import SignUp from '../modals/signUp/SignUp.js'
 
-const Header = () => {
-  return (
-    <div className="header">
-      <Navebar className="margin1" />
-      <div className="containerCol">
-        <EnergySymbols className=""/>
-        <SignUp className="center"/>
+class Header extends Component {
+  render() {
+    return (
+      <div className="header">
+        <Navebar userInSession ={this.props.userInSession} getUser={this.props.getUser}/>
+        <div className="containerCol">
+          <EnergySymbols className=""/>
+          <SignUp className="center"/>
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 export default Header;
