@@ -23,15 +23,9 @@ class projectsDisplay extends Component {
     return (
       <Container className="flexWrap marginMain">
         <Row>
-<<<<<<< HEAD
-          {this.state.allProjects.data.map((project) => {
-            return(<Col className="minWidth" xs={4}><ProjectCard projectData = {project} /></Col>)
-          })}
-=======
             {this.state.allProjects.data && this.state.allProjects.data.map((project) => {
               return(<Col xs={4}><ProjectCard projectData = {project} /></Col>)
             })}
->>>>>>> 71a19a1e816729f88cecf7404e75f240660a6019
         </Row>
         <Button className="btnSecondary center marginBtn1" variant="primary">Load More</Button>
       </Container>

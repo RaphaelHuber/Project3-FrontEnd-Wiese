@@ -11,13 +11,14 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      loggedInUser: 'maaaaa'
+      loggedInUser: null
     };
     this.service = new AuthService();
+    this.getTheUser = this.getTheUser.bind(this);
   }
 
   getTheUser(userObj) {
-    console.log('BUUUUU');
+    console.log('BUUUUU', userObj);
     this.setState({
       loggedInUser: userObj
     })
