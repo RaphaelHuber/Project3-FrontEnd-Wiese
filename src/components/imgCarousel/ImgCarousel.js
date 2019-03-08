@@ -10,7 +10,7 @@ const CarouselPage = () => {
         <MDBCarouselInner>
           <MDBCarouselItem itemId="1">
             <MDBView>
-              <img className="d-block w-100" src="../../../public/img/projects/solar-energy.png" alt="First slide" />
+              <img className="d-block w-100 imgCarousel-img" src="../../../public/img/projects/solar-energy.png" alt="First slide" />
               <MDBMask overlay="black-light" />
             </MDBView>
             <MDBCarouselCaption>
@@ -20,7 +20,7 @@ const CarouselPage = () => {
           </MDBCarouselItem>
           <MDBCarouselItem itemId="2">
             <MDBView>
-              <img className="d-block w-100" src="../../../public/img/projects/mini-hydro.png" alt="Second slide" />
+              <img className="d-block w-100 imgCarousel-img" src="../../../public/img/projects/mini-hydro.png" alt="Second slide" />
               <MDBMask overlay="black-strong" />
             </MDBView>
             <MDBCarouselCaption>
@@ -30,7 +30,7 @@ const CarouselPage = () => {
           </MDBCarouselItem>
           <MDBCarouselItem itemId="3">
             <MDBView>
-              <img className="d-block w-100" src="../../../public/img/projects/hydroelectric-wind-turbines.png" alt="Third slide" />
+              <img className="d-block w-100 imgCarousel-img" src="../../../public/img/projects/hydroelectric-wind-turbines.png" alt="Third slide" />
               <MDBMask overlay="black-slight" />
             </MDBView>
             <MDBCarouselCaption>
@@ -40,7 +40,7 @@ const CarouselPage = () => {
           </MDBCarouselItem>
           <MDBCarouselItem itemId="4">
             <MDBView>
-              <img className="d-block w-100" src="../../../public/img/projects/biomass-power-plants.png" alt="Mattonit's item" />
+              <img className="d-block w-100 imgCarousel-img" src="../../../public/img/projects/biomass-power-plants.png" alt="Mattonit's item" />
               <MDBMask overlay="black-light" />
             </MDBView>
             <MDBCarouselCaption>

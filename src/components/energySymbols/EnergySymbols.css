@@ -1,4 +1,4 @@
-.headerCenterContainer {
+.energySymbols-mainContainer {
   border: 3px solid rgba(145, 234, 224, 1);
   border-radius: 10px;
   width: 60%;
@@ -9,11 +9,7 @@
   filter: blur(0.5px);
 }
 
-.center {
-  margin: 0 auto;
-}
-
-.mainIcons {
+.energySybmols-icons {
   width: 15%;
   margin: 2% 5%;
 }

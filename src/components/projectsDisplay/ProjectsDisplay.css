@@ -1,12 +1,7 @@
-.flexWrap {
-  display: flex;
-  flex-wrap: wrap; 
-}
-
-.minWidth {
+.projectsDisplay-minWidth {
   min-width: 240px;
 }
 
-.marginMain {
+.projectsDisplay-margin1 {
   margin: 5% auto;
 }

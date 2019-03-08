@@ -28,6 +28,7 @@ class App extends Component {
       <body>
         <div>
           <Header userInSession ={this.state.loggedInUser} getUser={this.getTheUser}/>
+          <Filter />
           <ProjectsDisplay />
           <CarouselPage />
           <Footer />

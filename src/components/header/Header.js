@@ -10,7 +10,7 @@ class Header extends Component {
       <div className="header">
         <Navebar userInSession ={this.props.userInSession} getUser={this.props.getUser}/>
         <div className="containerCol">
-          <EnergySymbols className=""/>
+          <EnergySymbols/>
           <SignUp className="center"/>
         </div>
       </div>

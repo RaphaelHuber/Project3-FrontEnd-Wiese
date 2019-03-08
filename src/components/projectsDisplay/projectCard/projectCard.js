@@ -5,7 +5,7 @@ import './projectCard.css';
 class projectCard extends React.Component {
   render() {
     return (
-      <Card className="minSize">
+      <Card className="projectCard-minSize">
         <Card.Img variant="top" src={ this.props.projectData.pictures[0] } />
         <Card.Body>
           <Card.Title>{this.props.projectData.name}</Card.Title>

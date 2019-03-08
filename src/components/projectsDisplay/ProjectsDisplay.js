@@ -18,13 +18,13 @@ class projectsDisplay extends Component {
         this.setState({allProjects: response})
       })
   }
-  
+
   render() {
     return (
-      <Container className="flexWrap marginMain">
+      <Container className="flexWrap projectsDisplay-margin1">
         <Row>
           {this.state.allProjects.data && this.state.allProjects.data.map((project) => {
-            return(<Col className="minWidth" xs={4}><ProjectCard projectData = {project} /></Col>)
+            return(<Col className="projectsDisplay-minWidth" xs={4}><ProjectCard projectData = {project} /></Col>)
           })}
         </Row>
         <Button className="btnSecondary center marginBtn1" variant="primary">Load More</Button>

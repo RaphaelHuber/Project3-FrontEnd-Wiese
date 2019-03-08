@@ -38,10 +38,6 @@
   cursor: pointer;
 }
 
-.center {
-  margin: 0 auto;
-}
-
-.btnMain {
+.signUp-btnMain {
   font-size: 1.8vw !important;
 }

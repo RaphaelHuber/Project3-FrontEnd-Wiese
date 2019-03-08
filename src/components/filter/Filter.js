@@ -17,10 +17,10 @@ const filter = () => {
           <Form inline>
             <FormControl type="text" placeholder="Search..." className="" />
           </Form>
-          <Nav.Link className="filter-marginFilterComp" href="">ROI</Nav.Link>
-          <Nav.Link className="filter-marginFilterComp" href="">Time Periode</Nav.Link>
-          <Nav.Link className="filter-marginFilterComp" href="">Project Size</Nav.Link>
-          <Nav.Link className="filter-marginFilterComp" href="">Min. Investment</Nav.Link>
+          <Nav.Link className="filter-marginComp" href="">ROI</Nav.Link>
+          <Nav.Link className="filter-marginComp" href="">Time Periode</Nav.Link>
+          <Nav.Link className="filter-marginComp" href="">Project Size</Nav.Link>
+          <Nav.Link className="filter-marginComp" href="">Min. Investment</Nav.Link>
         </Nav>
         <div className="filter-boxSize1">
           <MultiSelect/>

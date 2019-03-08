@@ -10,22 +10,3 @@
   margin-right: auto;
   text-align: center;
 }
-
-.containerCol {
-  display: flex;
-  flex-direction: column;
-}
-
-.containerRow {
-  display: flex;
-  flex-direction: row;
-}
-
-.margin1 {
-  margin: auto 0.5%;
-}
-
-button {
-  background-color: #03B5AA !important;
-  border: none !important;
-}

@@ -1,3 +1,31 @@
 body {
   background-color: rgba(247, 255, 254, 1) !important;
 }
+
+button {
+  background-color: #03B5AA !important;
+  border: none !important;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.bgColorSecondary {
+  background-color: rgba(145, 234, 224, 1);
+}
+
+.containerCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.containerRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexWrap {
+  display: flex;
+  flex-wrap: wrap; 
+}
