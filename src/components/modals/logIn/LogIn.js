@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Button, Modal, Form } from 'react-bootstrap';
 import './LogIn.css';
 import { Col, Group, FormGroup, Label, Input} from 'reactstrap';
 
-class LogIn extends React.Component {
+class LogIn extends Component {
   constructor(props, context) {
     super(props, context);
 
@@ -12,6 +12,9 @@ class LogIn extends React.Component {
 
     this.state = {
       show: false,
+      user = {
+        email: "", 
+        description: "" }
     };
   }
 
@@ -30,7 +33,7 @@ class LogIn extends React.Component {
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Log in</Modal.Title>
+            <Modal.Title>{this.props.userInSession}</Modal.Title>
           </Modal.Header>
           <Form className="form">
             <Col>
@@ -59,6 +62,9 @@ class LogIn extends React.Component {
           <Modal.Footer>
             <Button variant="primary" onClick={this.handleClose}>
               Send
+            </Button>
+            <Button variant="primary" onClick={this.props.getUser}>
+              Test
             </Button>
           </Modal.Footer>
         </Modal>

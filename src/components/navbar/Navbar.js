@@ -3,7 +3,7 @@ import { Navbar, Nav, Form, Button } from 'react-bootstrap';
 import './Navbar.css';
 import LogIn from '../modals/logIn/LogIn.js';
 
-const navbar = () => {
+const navbar = (props) => {
   return (
     <Navbar bg="light" expand="lg" className="margin1">
       <Navbar.Brand href="#home">Wiese</Navbar.Brand>
@@ -16,7 +16,7 @@ const navbar = () => {
           <Nav.Link href="#myProjects">My Projects</Nav.Link>
         </Nav>
         <Form inline>
-          <LogIn />
+          <LogIn userInSession ={props.userInSession} getUser={props.getUser}/>
         </Form>
       </Navbar.Collapse>
     </Navbar>
