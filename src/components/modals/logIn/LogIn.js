@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Modal, Form } from 'react-bootstrap';
 import './LogIn.css';
-import { Col, Group, FormGroup, Label, Input} from 'reactstrap';
+import { Col, FormGroup, Label, Input} from 'reactstrap';
 
 class LogIn extends Component {
   constructor(props, context) {
@@ -12,7 +12,7 @@ class LogIn extends Component {
 
     this.state = {
       show: false,
-      user = {
+      user: {
         email: "", 
         description: "" }
     };
