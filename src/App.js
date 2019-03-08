@@ -25,15 +25,13 @@ class App extends Component {
 
   render() {
     return (
-      <body>
-        <div>
-          <Header userInSession ={this.state.loggedInUser} getUser={this.getTheUser}/>
-          <Filter />
-          <ProjectsDisplay />
-          <CarouselPage />
-          <Footer />
-        </div>
-      </body>
+      <div>
+        <Header userInSession ={this.state.loggedInUser} getUser={this.getTheUser}/>
+        <Filter />
+        <ProjectsDisplay />
+        <CarouselPage />
+        <Footer />
+      </div>
     );
   }
 }
