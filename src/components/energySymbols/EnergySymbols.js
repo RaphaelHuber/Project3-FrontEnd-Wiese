@@ -13,10 +13,10 @@ import biomassDark from '../../../public/img/icons/BiomassDark.png';
 const energySymbols = () => {
   return (
     <div className="headerCenterContainer center">
-      <img className="mainIcons" src={ windPowerDark } />
-      <img className="mainIcons" src={ solarDark } />
-      <img className="mainIcons" src={ hydroDark } />
-      <img className="mainIcons" src={ biomassDark } />
+      <img className="mainIcons" src={ windPowerLight } />
+      <img className="mainIcons" src={ solarLight } />
+      <img className="mainIcons" src={ hydroLight } />
+      <img className="mainIcons" src={ biomassLight } />
     </div>
   )
 }

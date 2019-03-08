@@ -1,11 +1,12 @@
 .headerCenterContainer {
-  border: 3px solid white;
+  border: 3px solid rgba(145, 234, 224, 1);
   border-radius: 10px;
   width: 60%;
   box-sizing: content-box;
   margin-top: 15% !important;
   margin-bottom: 8% !important;
-  background-color: rgba(255, 255, 255, 0.201);
+  background-color: rgba(145, 234, 224, 0.25);
+  filter: blur(0.5px);
 }
 
 .center {
