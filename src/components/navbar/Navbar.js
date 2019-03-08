@@ -5,7 +5,7 @@ import LogIn from '../modals/logIn/LogIn.js';
 
 const navbar = () => {
   return (
-    <Navbar bg="light" expand="lg" className="marginNav">
+    <Navbar expand="lg" className="marginNav bgColorSecondary">
       <Navbar.Brand href="#home">Wiese</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">

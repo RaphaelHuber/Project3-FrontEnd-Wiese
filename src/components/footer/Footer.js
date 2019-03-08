@@ -4,7 +4,7 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <Navbar bg="light" expand="lg" className="footer">
+    <Navbar expand="lg" className="footer bgColorSecondary">
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav>

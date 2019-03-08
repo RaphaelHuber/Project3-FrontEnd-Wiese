@@ -24,3 +24,8 @@
 .margin1 {
   margin: auto 0.5%;
 }
+
+button {
+  background-color: #03B5AA !important;
+  border: none !important;
+}
