@@ -8,27 +8,10 @@ import Footer from '../../footer/Footer.js';
 import Filter from '../../filter/Filter.js';
 
 class Main extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      loggedInUser: null
-    };
-    this.service = new AuthService();
-    this.getTheUser = this.getTheUser.bind(this);
-  }
-
-  getTheUser(userObj) {
-    console.log('BUUUUU', userObj);
-    this.setState({
-      loggedInUser: userObj
-    })
-  }
-
   render() {
     return (
       <div>
-        <Header userInSession ={this.state.loggedInUser} getUser={this.getTheUser}/>
-        <Filter />
+        <Header />
         <ProjectsDisplay />
         <CarouselPage />
         <Footer />
