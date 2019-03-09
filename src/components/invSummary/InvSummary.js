@@ -50,7 +50,7 @@ class InvSummary extends Component {
               5 years
             </div>  
           </Card.Text>
-          <Button variant="primary" className="">INVEST</Button>
+          <Button variant="primary" className="centered">INVEST</Button>
         </Card.Body>
       </Card>
     )
