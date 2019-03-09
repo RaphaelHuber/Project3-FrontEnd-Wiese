@@ -1,0 +1,21 @@
+.projectDetails-container {
+  margin: 2% auto;
+  width: 70vw;
+  height: 85vh;
+  position: relative;
+}
+
+.projectDetails-float {
+  background-color: rgba(0, 7, 7, 0.4);
+  position: absolute;
+  right: 3vw;
+  bottom: 5vh;
+  width: 30vw;
+  height: 20vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.projectDetails-img {
+  width: 100%;
+  height: 100%;
+}

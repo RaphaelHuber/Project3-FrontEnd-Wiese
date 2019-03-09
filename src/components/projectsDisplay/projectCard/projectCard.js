@@ -13,7 +13,7 @@ class projectCard extends React.Component {
           <Card.Text>
           {this.props.projectData.description}
           </Card.Text>
-          <Button variant="primary">More</Button>
+          <Button href="/ProjectDetails" variant="primary">More</Button>
         </Card.Body>
       </Card>
     );

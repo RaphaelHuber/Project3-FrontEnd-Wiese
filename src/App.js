@@ -1,35 +1,19 @@
 import React, { Component } from 'react';
+import { Switch, Route, Link } from 'react-router-dom';
 import './App.css';
-import AuthService from './components/auth/auth-service';
-import Header from './components/header/Header.js';
-import ProjectsDisplay from './components/projectsDisplay/ProjectsDisplay.js';
-import CarouselPage from './components/imgCarousel/ImgCarousel.js'
-import Footer from './components/footer/Footer.js';
+import Main from './components/pages/main/Main.js';
+import ProjectDetails from './components/pages/projectDetails/ProjectDetails.js';
+import OurNavbar from './components/navbar/Navbar.js'
 
 class App extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      loggedInUser: null
-    };
-    this.service = new AuthService();
-    this.getTheUser = this.getTheUser.bind(this);
-  }
-
-  getTheUser(userObj) {
-    console.log('BUUUUU', userObj);
-    this.setState({
-      loggedInUser: userObj
-    })
-  }
-
   render() {
     return (
       <div>
-        <Header userInSession ={this.state.loggedInUser} getUser={this.getTheUser}/>
-        <ProjectsDisplay />
-        <CarouselPage />
-        <Footer />
+        <OurNavbar userInSession ={this.props.userInSession} getUser={this.props.getUser}/>
+        <Switch>
+          <Route exact path="/" component={ Main } />
+          <Route exact path="/ProjectDetails" component={ ProjectDetails } />
+        </Switch>
       </div>
     );
   }

@@ -59,7 +59,7 @@ class LogIn extends Component {
           <Form className="form">
             <Col>
               <FormGroup>
-                <Label>username</Label>
+                <Label>Username</Label>
                 <Input
                   type="text"
                   name="username"
