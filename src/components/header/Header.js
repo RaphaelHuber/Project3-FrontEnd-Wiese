@@ -7,12 +7,9 @@ import SignUp from '../modals/signUp/SignUp.js'
 class Header extends Component {
   render() {
     return (
-      <div className="header">
-        <OurNavbar userInSession ={this.props.userInSession} getUser={this.props.getUser}/>
-        <div className="containerCol">
-          <EnergySymbols/>
-          <SignUp className="center"/>
-        </div>
+      <div className="containerCol header">
+        <EnergySymbols/>
+        <SignUp className="center"/>
       </div>
     )
   }
