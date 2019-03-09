@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Navbar, Nav, Form, FormControl} from 'react-bootstrap';
 import './Filter.css';
 import MultiSelect from './multiSelect/MultiSelect.js';
-import ArrowSortPair from './ArrowSortPair'
+import ArrowSortPair from './ArrowSortPair';
+import SourceFilter from './SourceFilter';
 
 const test = [
   { value: "ocean", label: "ocean"},
@@ -36,13 +37,12 @@ class Filter extends Component {
             <Form inline>
               <FormControl type="text" placeholder="Search..." className="" />
             </Form>
-            <Nav.Link className="filter-marginComp" href="">ROI</Nav.Link>
-            <div display="inline-block">
-              <ArrowSortPair handleUp = {this.handleUp} handleDown = {this.handleDown}/>
-            </div>
+            <ArrowSortPair handleUp = {this.handleUp} handleDown = {this.handleDown} criteria = {'expectedReturn'} criteriaDisplay = {'ROI'}/>
+            <ArrowSortPair handleUp = {this.handleUp} handleDown = {this.handleDown} criteria = {'minimumInvestment'} criteriaDisplay = {'Minimum Inv.'}/>
+            <ArrowSortPair handleUp = {this.handleUp} handleDown = {this.handleDown} criteria = {'targetAmount'} criteriaDisplay = {'Target'}/>
           </Nav>
           <div className="filter-boxSize1">
-            <MultiSelect/>
+            <SourceFilter filterProjectsBySource = {this.props.filterProjectsBySource}/>
           </div>
         </Navbar.Collapse>
       </Navbar>

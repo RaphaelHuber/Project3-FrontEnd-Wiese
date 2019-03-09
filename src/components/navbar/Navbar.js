@@ -28,7 +28,7 @@ class OurNavbar extends Component {
         <Button variant="primary" onClick={this.logoutUser}>Logout</Button>
       </div>
     } else {
-      logStatus = <LogIn userInSession ={this.props.userInSession} getUser={this.props.getUser}/>;
+      logStatus = <LogIn userInSession = {this.props.userInSession} getUser = {this.props.getUser}/>;
     }
 
     return (
