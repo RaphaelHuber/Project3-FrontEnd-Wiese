@@ -1,15 +1,34 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, Form, NavDropdown } from 'react-bootstrap';
+import { Button, Navbar, Nav, Form, NavDropdown } from 'react-bootstrap';
 import './Navbar.css';
 import LogIn from '../modals/logIn/LogIn.js';
+import AuthService from '../auth/auth-service';
 
 class OurNavbar extends Component {
+  constructor(props){
+    super(props);
+    this.service = new AuthService();
+    this.logoutUser = this.logoutUser.bind(this);
+  }
+  
+  logoutUser() {
+    this.service.logout()
+    .then(() => {
+      this.props.getUser(null);  
+    })
+  }
+  
   render() {
     let logStatus;
+
     if(this.props.userInSession) {
-      logStatus = <span>{this.props.userInSession.username}</span>
+      logStatus = 
+      <div>
+        <Nav.Link href="#contUs">{this.props.userInSession.username}</Nav.Link>
+        <Button variant="primary" onClick={this.logoutUser}>Logout</Button>
+      </div>
     } else {
-      logStatus = '';
+      logStatus = <LogIn userInSession ={this.props.userInSession} getUser={this.props.getUser}/>;
     }
 
     return (
@@ -31,8 +50,7 @@ class OurNavbar extends Component {
             <Nav.Link href="#contactUs">Contact Us</Nav.Link>
           </Nav>
           <Form inline>
-            <Nav.Link href="#contUs">{logStatus}</Nav.Link>
-            <LogIn userInSession ={this.props.userInSession} getUser={this.props.getUser}/>
+            {logStatus}
           </Form>
         </Navbar.Collapse>
       </Navbar>

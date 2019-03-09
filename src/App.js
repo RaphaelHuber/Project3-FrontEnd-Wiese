@@ -5,7 +5,6 @@ import Header from './components/header/Header.js';
 import ProjectsDisplay from './components/projectsDisplay/ProjectsDisplay.js';
 import CarouselPage from './components/imgCarousel/ImgCarousel.js'
 import Footer from './components/footer/Footer.js';
-import Filter from './components/filter/Filter.js';
 
 class App extends Component {
   constructor(props){
@@ -28,7 +27,6 @@ class App extends Component {
     return (
       <div>
         <Header userInSession ={this.state.loggedInUser} getUser={this.getTheUser}/>
-        <Filter />
         <ProjectsDisplay />
         <CarouselPage />
         <Footer />
