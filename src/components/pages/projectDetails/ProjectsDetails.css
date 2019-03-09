@@ -35,3 +35,8 @@
 .projectDetails-align {
   align-items: center;
 }
+
+.projectDetails-infoBox {
+  width: 70%;
+  margin: 0 auto;
+}
