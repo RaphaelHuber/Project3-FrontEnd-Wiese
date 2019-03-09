@@ -18,7 +18,6 @@ class Main extends Component {
   }
 
   getTheUser(userObj) {
-    console.log('BUUUUU', userObj);
     this.setState({
       loggedInUser: userObj
     })
@@ -28,7 +27,6 @@ class Main extends Component {
     return (
       <div>
         <Header userInSession ={this.state.loggedInUser} getUser={this.getTheUser}/>
-        <Filter />
         <ProjectsDisplay />
         <CarouselPage />
         <Footer />
