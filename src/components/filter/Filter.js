@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, Form, FormControl} from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import './Filter.css';
-import MultiSelect from './multiSelect/MultiSelect.js';
+import NameFilter from './NameFilter';
 import ArrowSortPair from './ArrowSortPair';
 import SourceFilter from './SourceFilter';
 
-const test = [
-  { value: "ocean", label: "ocean"},
-  { value: "fire", label: "fire"},
-]
 
 class Filter extends Component {
   constructor(props) {
@@ -34,9 +30,7 @@ class Filter extends Component {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Form inline>
-              <FormControl type="text" placeholder="Search..." className="" />
-            </Form>
+            <NameFilter filterProjectsByName = {this.props.filterProjectsByName} />
             <ArrowSortPair handleUp = {this.handleUp} handleDown = {this.handleDown} criteria = {'expectedReturn'} criteriaDisplay = {'ROI'}/>
             <ArrowSortPair handleUp = {this.handleUp} handleDown = {this.handleDown} criteria = {'minimumInvestment'} criteriaDisplay = {'Minimum Inv.'}/>
             <ArrowSortPair handleUp = {this.handleUp} handleDown = {this.handleDown} criteria = {'targetAmount'} criteriaDisplay = {'Target'}/>

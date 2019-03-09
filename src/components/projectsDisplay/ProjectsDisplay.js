@@ -15,6 +15,7 @@ class projectsDisplay extends Component {
     this.sortProjectsUp = this.sortProjectsUp.bind(this);
     this.sortProjectsDown = this.sortProjectsDown.bind(this);
     this.filterProjectsBySource = this.filterProjectsBySource.bind(this);
+    this.filterProjectsByName = this.filterProjectsByName.bind(this);
   }
 
   sortProjectsUp(criteria) {
@@ -50,6 +51,11 @@ class projectsDisplay extends Component {
     this.setState({displayProjects: filteredArray});
   }
 
+  filterProjectsByName(barInput) {
+    let filteredArray = this.state.allProjects.filter(project => project.name.toUpperCase().includes(barInput.toUpperCase()));
+    this.setState({displayProjects: filteredArray});
+  }
+
   componentDidMount() {
     axios.get(`http://localhost:5000/projects`)
       .then((response) => {
@@ -60,7 +66,7 @@ class projectsDisplay extends Component {
   render() {
     return (
       <div>
-        <Filter sortProjectsUp = {this.sortProjectsUp} sortProjectsDown = {this.sortProjectsDown} filterProjectsBySource = {this.filterProjectsBySource}/>
+        <Filter sortProjectsUp = {this.sortProjectsUp} sortProjectsDown = {this.sortProjectsDown} filterProjectsBySource = {this.filterProjectsBySource} filterProjectsByName = {this.filterProjectsByName}/>
         <Container className="flexWrap projectsDisplay-margin1">
           <Row>
             {this.state.displayProjects && this.state.displayProjects.map((project, i) => {
