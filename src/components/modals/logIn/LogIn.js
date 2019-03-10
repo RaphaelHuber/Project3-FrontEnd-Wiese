@@ -15,8 +15,8 @@ class LogIn extends Component {
 
     this.state = {
       show: false,
-      username: "", 
-      password: ""
+      username: '', 
+      password: ''
     };
     this.service = new AuthService();
   }
@@ -38,11 +38,11 @@ class LogIn extends Component {
     event.preventDefault();
     const username = this.state.username;
     const password = this.state.password;
+
     this.service.login(username, password)
       .then((response) => {
-        this.setState({ username: "", password: "" });
+        this.setState({ username: '', password: '' });
         this.props.getUser(response);
-        this.handleClose();
       })
       .catch(error => console.log(error));
   }
@@ -65,6 +65,7 @@ class LogIn extends Component {
                   name="username"
                   id="exampleUsername"
                   placeholder="myUsername"
+                  value={this.state.username}
                   onChange={ e => this.handleChange(e)}
                 />
               </FormGroup>
@@ -77,6 +78,7 @@ class LogIn extends Component {
                   name="password"
                   id="examplePassword"
                   placeholder="********"
+                  value={this.state.password}
                   onChange={ e => this.handleChange(e)}
                 />
               </FormGroup>

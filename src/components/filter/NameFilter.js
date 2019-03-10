@@ -11,14 +11,14 @@ class NameFilter extends Component {
   
   handleChange(event) {
     const { value } = event.target;
-    // this.setState({barInput: value});
+    this.setState({barInput: value});
     this.props.filterProjectsByName(value)
   }
 
   render () {
     return (
       <Form inline>
-        <FormControl type="text" placeholder="Search" onChange={ e => this.handleChange(e)}/>
+        <FormControl type="text" placeholder="Search" value ={this.state.barInput} onChange={ e => this.handleChange(e)}/>
       </Form>
     )
   }

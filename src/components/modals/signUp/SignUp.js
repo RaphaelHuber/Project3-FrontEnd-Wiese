@@ -1,26 +1,53 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Button, Modal, Form } from 'react-bootstrap';
 import './SignUp.css';
 import { Col, FormGroup, Label, Input} from 'reactstrap';
+import AuthService from '../../auth/auth-service';
 
-class SignUp extends React.Component {
+class SignUp extends Component {
   constructor(props, context) {
     super(props, context);
 
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
 
     this.state = {
-      show: false
+      show: false,
+      username: '',
+      email: '',
+      password: ''
     };
+    this.service = new AuthService();
+  }
+  
+  handleShow() {
+    this.setState({ show: true });
   }
 
   handleClose() {
     this.setState({ show: false });
   }
 
-  handleShow() {
-    this.setState({ show: true });
+  handleChange(event) {  
+    const {name, value} = event.target;
+    this.setState({[name]: value});
+  }
+
+  handleFormSubmit(event) {
+    event.preventDefault();
+    const username = this.state.username;
+    const email = this.state.email;
+    const password = this.state.password;
+    
+    this.service.signup(username, email, password)
+      .then((response) => {
+        this.setState({ username: '', email: '', password: '' });
+        this.props.getUser(response);
+        this.handleClose();
+      })
+      .catch(error => console.log(error));
   }
 
   render() {
@@ -35,34 +62,27 @@ class SignUp extends React.Component {
           <Form className="form">
             <Col>
               <FormGroup>
-                <Label>Name</Label>
+                <Label>Username</Label>
                 <Input
                   type="text"
-                  name="name"
+                  name="username"
                   id=""
-                  placeholder="myname"
+                  placeholder="myUsername"
+                  value={this.state.username}
+                  onChange={ e => this.handleChange(e)}
                 />
               </FormGroup>
             </Col>
             <Col>
               <FormGroup>
-                <Label>Surname</Label>
-                <Input
-                  type="text"
-                  name="surname"
-                  id=""
-                  placeholder="mysurname"
-                />
-              </FormGroup>
-            </Col>
-            <Col>
-              <FormGroup>
-                <Label>Email</Label>
+                <Label>email</Label>
                 <Input
                   type="email"
                   name="email"
                   id="exampleEmail"
-                  placeholder="myemail@email.com"
+                  placeholder="myemail@provider.com"
+                  value={this.state.email}
+                  onChange={ e => this.handleChange(e)}
                 />
               </FormGroup>
             </Col>
@@ -74,12 +94,14 @@ class SignUp extends React.Component {
                   name="password"
                   id="examplePassword"
                   placeholder="********"
+                  value={this.state.password}
+                  onChange={ e => this.handleChange(e)}
                 />
               </FormGroup>
             </Col>
           </Form>
           <Modal.Footer>
-            <Button variant="primary" onClick={this.handleClose}>
+            <Button variant="primary" onClick={this.handleFormSubmit}>
               Send
             </Button>
           </Modal.Footer>
