@@ -4,7 +4,7 @@ import './App.css';
 import Main from './components/pages/main/Main.js';
 import ProjectDetails from './components/pages/projectDetails/ProjectDetails.js';
 import OurNavbar from './components/navbar/Navbar.js';
-import Footer from '../../footer/Footer.js';
+import Footer from '../src/components/footer/Footer.js';
 import AuthService from './components/auth/auth-service.js';
 import UserProfile from './components/profile/UserProfile';
 

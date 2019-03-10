@@ -16,8 +16,6 @@ class Invest extends Component {
 
     this.state = {
       show: false,
-      username: "", 
-      password: "",
       invAmount: 0
     };
     this.service = new AuthService();
@@ -37,20 +35,10 @@ class Invest extends Component {
   }
 
   handleFormSubmit(event) {
-    event.preventDefault();
-    const username = this.state.username;
-    const password = this.state.password;
-    this.service.login(username, password)
-      .then((response) => {
-        this.setState({ username: "", password: "" });
-        this.props.getUser(response);
-        this.handleClose();
-      })
-      .catch(error => console.log(error));
   }
 
   changeAmount(event) {
-    const { value } = event.target;
+    const { value } = event.target
     this.setState({
       invAmount: value
     });
@@ -69,16 +57,17 @@ class Invest extends Component {
             <Col>
               <FormGroup className="spaceEven">
                 <Button variant="primary" 
-                className="btnBgColorSecondary invest-boxes center-text">
-                Min.
-                </Button>
+                className="btnBgColorSecondary invest-boxes center-text"
+                onClick={this.changeAmount} value="2">
+                100</Button>
                 <Button variant="primary" 
-                className="btnBgColorSecondary invest-boxes center-text">
-                Min. x 2
+                className="btnBgColorSecondary invest-boxes center-text"
+                onClick={this.changeAmount} value="5">
+                250
                 </Button>
                 <Button variant="primary" 
                 className="btnBgColorSecondary invest-boxes center-text"
-                onClick={this.changeAmount} value="500">
+                onClick={this.changeAmount} value="10">
                 500
                 </Button>
               </FormGroup>
