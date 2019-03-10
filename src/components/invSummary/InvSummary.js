@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import './InvSummary.css';
+import Invest from '../modals/invest/Invest.js';
 
 class InvSummary extends Component {
   render() {
@@ -50,7 +51,7 @@ class InvSummary extends Component {
               5 years
             </div>  
           </Card.Text>
-          <Button variant="primary" className="centered">INVEST</Button>
+          <Invest/>
         </Card.Body>
       </Card>
     )
@@ -58,3 +59,5 @@ class InvSummary extends Component {
 }
 
 export default InvSummary;
+
+// <Button variant="primary" className="centered">INVEST</Button>
