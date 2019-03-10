@@ -11,7 +11,7 @@ class NameFilter extends Component {
   
   handleChange(event) {
     const { value } = event.target;
-    // this.setState({barInput: value});
+    this.setState({barInput: value});
     this.props.filterProjectsByName(value)
   }
 

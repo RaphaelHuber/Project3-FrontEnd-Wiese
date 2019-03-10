@@ -12,11 +12,13 @@ class Invest extends Component {
     this.handleClose = this.handleClose.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.changeAmount = this.changeAmount.bind(this);
 
     this.state = {
       show: false,
       username: "", 
-      password: ""
+      password: "",
+      invAmount: 0
     };
     this.service = new AuthService();
   }
@@ -47,6 +49,13 @@ class Invest extends Component {
       .catch(error => console.log(error));
   }
 
+  changeAmount(event) {
+    const { value } = event.target;
+    this.setState({
+      invAmount: value
+    });
+  }
+
   render() {
     return (
       <div>
@@ -58,26 +67,35 @@ class Invest extends Component {
           </Modal.Header>
           <Form className="form">
             <Col>
-              <FormGroup>
-                <Label>Some Options</Label>
-                <div className="containerRow">
-
-                </div>
+              <FormGroup className="spaceEven">
+                <Button variant="primary" 
+                className="btnBgColorSecondary invest-boxes center-text">
+                Min.
+                </Button>
+                <Button variant="primary" 
+                className="btnBgColorSecondary invest-boxes center-text">
+                Min. x 2
+                </Button>
+                <Button variant="primary" 
+                className="btnBgColorSecondary invest-boxes center-text"
+                onClick={this.changeAmount} value="500">
+                500
+                </Button>
               </FormGroup>
             </Col>
             <Col>
               <FormGroup>
-                <Label>Custom Amount</Label>
+                <Label>Amount</Label>
                 <Input 
                   type="Number"
-                  name="amount"
                   placeholder="min. amount"
+                  value={this.state.invAmount}
                 />
               </FormGroup>
             </Col>
           </Form>
           <Modal.Footer>
-            <Button variant="primary" onClick={this.handleFormSubmit}>
+            <Button variant="primary" onClick={this.handleClose} >
               Send
             </Button>
           </Modal.Footer>

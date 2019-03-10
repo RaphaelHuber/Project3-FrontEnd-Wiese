@@ -3,7 +3,7 @@ body {
 }
 
 button {
-  background-color: #03B5AA !important;
+  background-color: rgba(2, 180, 168, 1) !important;
   border: none !important;
 }
 
@@ -11,8 +11,16 @@ button {
   margin: 0 auto;
 }
 
+.center-text {
+  text-align: center;
+}
+
 .bgColorSecondary {
   background-color: rgba(145, 234, 224, 1);
+}
+
+.btnBgColorSecondary {
+  background-color: rgba(145, 234, 224, 1) !important;
 }
 
 .containerCol {
@@ -28,4 +36,15 @@ button {
 .flexWrap {
   display: flex;
   flex-wrap: wrap; 
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.spaceEven {
+  display: flex;
+  justify-content: space-evenly;
 }
