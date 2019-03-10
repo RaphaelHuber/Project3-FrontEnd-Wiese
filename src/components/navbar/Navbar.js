@@ -33,7 +33,7 @@ class OurNavbar extends Component {
 
     return (
       <Navbar expand="lg" className="bgColorSecondary">
-        <Navbar.Brand href="#home">Wiese</Navbar.Brand>
+        <Navbar.Brand href="/">Wiese</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
