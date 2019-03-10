@@ -1,0 +1,14 @@
+.userProfile-size {
+  width: 35%;
+  /* height: 90%; */
+  min-width: 300px !important;
+  min-height: 350px;
+}
+
+.userProfile-margin1 {
+  margin: 2% auto;
+}
+
+.userProfile-marginNum {
+  margin: auto 0 auto auto;
+}

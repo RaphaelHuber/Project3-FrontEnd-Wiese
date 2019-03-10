@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './projectCard.css';
 
 class projectCard extends React.Component {
@@ -16,7 +17,9 @@ class projectCard extends React.Component {
           <Card.Text>
           {this.props.projectData.description}
           </Card.Text>
-          <Button href="/ProjectDetails" variant="primary">More</Button>
+          <Link to={`/projectDetails/${this.props.projectData._id}`}>
+            <Button variant="primary">More</Button>
+          </Link>
         </Card.Body>
       </Card>
     );
