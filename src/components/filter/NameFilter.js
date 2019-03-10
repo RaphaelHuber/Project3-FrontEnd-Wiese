@@ -18,7 +18,7 @@ class NameFilter extends Component {
   render () {
     return (
       <Form inline>
-        <FormControl type="text" placeholder="Search" onChange={ e => this.handleChange(e)}/>
+        <FormControl type="text" placeholder="Search" value ={this.state.barInput} onChange={ e => this.handleChange(e)}/>
       </Form>
     )
   }

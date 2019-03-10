@@ -24,7 +24,7 @@ class OurNavbar extends Component {
     if(this.props.userInSession) {
       logStatus = 
       <div>
-        <Nav.Link href="#contUs">{this.props.userInSession.username}</Nav.Link>
+        <Nav.Link href="/myProfile">{this.props.userInSession.username}</Nav.Link>
         <Button variant="primary" onClick={this.logoutUser}>Logout</Button>
       </div>
     } else {

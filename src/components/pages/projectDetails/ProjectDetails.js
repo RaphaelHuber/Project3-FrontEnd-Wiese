@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './ProjectsDetails.css';
-import Footer from '../../footer/Footer';
 import InvProgress from '../../invProgress/InvProgress.js'
 import TabbedComp from '../../tabbedComp/TabbedComp.js';
 import InvSummary from '../../invSummary/InvSummary.js'
@@ -25,7 +24,6 @@ class ProjectDetails extends Component {
           <TabbedComp />
           <InvSummary />
         </div>
-        <Footer />
       </div>
     );
   }

@@ -9,7 +9,7 @@ class Header extends Component {
     return (
       <div className="containerCol header">
         <EnergySymbols/>
-        <SignUp className="center"/>
+        <SignUp className="center" userInSession={this.props.loggedInUser} getUser={this.props.getUser}/>
       </div>
     )
   }
