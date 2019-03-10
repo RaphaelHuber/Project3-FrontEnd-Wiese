@@ -13,7 +13,7 @@ class InvSummary extends Component {
               Target Sum:
             </div>
             <div className="center">
-              200.000$
+              {this.props.project.targetAmount} $
             </div>
           </div>
           <div className="containerCol invSummary-margin1">
@@ -26,13 +26,13 @@ class InvSummary extends Component {
           </div>
         </Card.Header>
         <Card.Body>
-          <Card.Title>Project Name</Card.Title>
+          <Card.Title>{this.props.project.name}</Card.Title>
           <Card.Text className="containerRow">
             <div>
               Return on Capital:
             </div>  
             <div className="invSummary-marginNum">
-              5%
+            {this.props.project.expectedReturn}
             </div>  
           </Card.Text>
           <Card.Text className="containerRow">
@@ -40,7 +40,7 @@ class InvSummary extends Component {
               Periodicity:
             </div>  
             <div className="invSummary-marginNum">
-              semi-anual
+            {this.props.project.periodicity}
             </div>  
           </Card.Text>
           <Card.Text className="containerRow">
@@ -48,7 +48,7 @@ class InvSummary extends Component {
               Duration:
             </div>  
             <div className="invSummary-marginNum">
-              5 years
+              {this.props.project.paymentPeriod}
             </div>  
           </Card.Text>
           <Invest/>
@@ -59,5 +59,3 @@ class InvSummary extends Component {
 }
 
 export default InvSummary;
-
-// <Button variant="primary" className="centered">INVEST</Button>
