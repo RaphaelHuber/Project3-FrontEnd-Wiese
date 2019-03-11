@@ -6,3 +6,13 @@
 .invest-boxes {
   margin: 4% auto;
 }
+
+.invest-currencyIcon {
+  width: 15px;
+  height: 15px;
+  margin: 12px 5px 12px auto;
+}
+
+.invest-labelMarg1 {
+  margin: auto auto auto 20px;
+}

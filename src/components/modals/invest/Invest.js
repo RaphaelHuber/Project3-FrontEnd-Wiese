@@ -45,7 +45,6 @@ class Invest extends Component {
   }
 
   render() {
-    console.log("data", this.props.data);
     return (
       <div>
         <Button variant="primary"  className="invest-center" onClick={this.handleShow}>INVEST</Button>
@@ -73,13 +72,16 @@ class Invest extends Component {
             </Col>
             <Col>
               <FormGroup>
-                <Label>Amount</Label>
-                <Input 
-                  type="Number"
-                  placeholder= {`Min. amount is ${this.props.data} $`}
-                  value={this.state.invAmount}
-                  onChange={e => this.handleChange(e)}
-                />
+                <Label className="invest-labelMarg1">Amount</Label>
+                <div className="containerRow">
+                  <img className="invest-currencyIcon" src="../../../../public/img/icons/dollarSign.png" />
+                  <Input 
+                    type="Number"
+                    placeholder= {`Min. amount is ${this.props.data} $`}
+                    value={this.state.invAmount}
+                    onChange={e => this.handleChange(e)}
+                  />
+                </div>
               </FormGroup>
             </Col>
           </Form>

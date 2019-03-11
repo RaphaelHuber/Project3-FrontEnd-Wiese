@@ -28,7 +28,7 @@ class ProjectDetails extends Component {
   
   render() {
     // make sure that the image src is rendered when existing
-    const imgSrc = (this.state.pictures) ? this.state.pictures[0] : false;
+    const imgSrc = (this.state.pictures) ? this.state.pictures[0] : "";
     return (
       <div>
         <div className="projectDetails-container">
