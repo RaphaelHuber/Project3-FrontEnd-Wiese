@@ -51,7 +51,7 @@ class InvSummary extends Component {
               {this.props.project.paymentPeriod}
             </div>  
           </Card.Text>
-          <Invest/>
+          <Invest data={ this.props.project.minimumInvestment}/>
         </Card.Body>
       </Card>
     )

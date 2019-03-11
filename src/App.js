@@ -13,7 +13,7 @@ class App extends Component {
     super(props)
     this.state = {
       loggedInUser: null,
-      pictures: ['https://images.pexels.com/photos/140234/pexels-photo-140234.jpeg?auto=compress&cs=tinysrgb&h=650&w=940']
+      pictures: []
     };
     this.service = new AuthService();
     this.getTheUser = this.getTheUser.bind(this);
