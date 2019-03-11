@@ -42,7 +42,7 @@ class ProjectDetails extends Component {
           </div>
         </div>
         <div className="projectDetails-infoBox containerRow flexWrap">
-          <TabbedComp/>
+          <TabbedComp project={this.state}/>
           <InvSummary project={this.state} />
         </div>
       </div>

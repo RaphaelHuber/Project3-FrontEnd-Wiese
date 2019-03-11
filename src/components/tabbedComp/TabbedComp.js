@@ -19,7 +19,7 @@ class TabbedComp extends Component {
           onSelect={key => this.setState({ key })}
         >
           <Tab eventKey="description" title="Description">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>{this.props.project.description}</p>
           </Tab>
           <Tab eventKey="projectOwner" title="Project Owner">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id faucibus nisl tincidunt eget nullam non nisi. Amet volutpat consequat mauris nunc congue nisi vitae suscipit. Ante in nibh mauris cursus. Imperdiet dui accumsan sit amet nulla. Aliquam faucibus purus in massa tempor. Neque egestas congue quisque egestas diam in. Adipiscing elit pellentesque habitant morbi tristique senectus. Aliquam etiam erat velit scelerisque in. Hendrerit gravida rutrum quisque non tellus orci ac auctor. In metus vulputate eu scelerisque felis imperdiet proin fermentum leo. </p>
