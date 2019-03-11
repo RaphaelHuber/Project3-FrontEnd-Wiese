@@ -12,7 +12,8 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      loggedInUser: null
+      loggedInUser: null,
+      pictures: []
     };
     this.service = new AuthService();
     this.getTheUser = this.getTheUser.bind(this);
@@ -48,7 +49,7 @@ class App extends Component {
         <OurNavbar userInSession={this.state.loggedInUser} getUser={this.getTheUser}/>
         <Switch>
           <Route exact path='/' render={(props) => <Main {...props}userInSession={this.state.loggedInUser} getUser={this.getTheUser} />} />
-          <Route exact path='/projectDetails/:id' component={ ProjectDetails } />
+          <Route exact path='/projectDetails/:id' component={ ProjectDetails } picture={this.state.pictures[0]}/>
           <Route exact path='/myProfile' render={(props) => <UserProfile {...props} userInSession = {this.state.loggedInUser} />} />
         </Switch>
         <Footer/>

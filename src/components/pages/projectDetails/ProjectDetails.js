@@ -27,23 +27,25 @@ class ProjectDetails extends Component {
   }
   
   render() {
+    // make sure that the image src is rendered when existing
+    const imgSrc = (this.state.pictures) ? this.state.pictures[0] : "";
     return (
       <div>
         <div className="projectDetails-container">
-          <img className="projectDetails-img" src="../../../../public/img/projects/solar-energy.png"/>
+          <img className="projectDetails-img" src={imgSrc}/>
           <div className="projectDetails-float">
             <div className="containerRow projectDetails-align">
               <img className="projectDetails-icons" src="../../../../public/img/icons/RoundLight.png"></img>
-              <p>{this.state.name}</p>
+              <p>{this.state.raisedAmount} $</p>
               <img className="projectDetails-icons" src="../../../../public/img/icons/RoundLight.png"></img>
               <p>230 Investors</p>
             </div>
-            <InvProgress />
+            <InvProgress/>
           </div>
         </div>
         <div className="projectDetails-infoBox containerRow flexWrap">
-          <TabbedComp />
-          <InvSummary />
+          <TabbedComp project={this.state}/>
+          <InvSummary project={this.state} />
         </div>
       </div>
     );
