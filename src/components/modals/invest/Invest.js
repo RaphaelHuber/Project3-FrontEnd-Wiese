@@ -49,6 +49,8 @@ class Invest extends Component {
     this.service.invest(investor, project, invAmount)
     .then((response) => {
         this.setState({ investor: '', project: '', invAmount: '' });
+
+        // have to pass the getUser function via props
         this.props.getUser(response);
         this.handleClose();
       })
