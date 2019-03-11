@@ -27,10 +27,11 @@ class ProjectDetails extends Component {
   }
   
   render() {
+    const imgSrc = (this.state.pictures) ? this.state.pictures[0] : false;
     return (
       <div>
         <div className="projectDetails-container">
-          <img className="projectDetails-img" src="../../../../public/img/projects/solar-energy.png"/>
+          <img className="projectDetails-img" src={imgSrc}/>
           <div className="projectDetails-float">
             <div className="containerRow projectDetails-align">
               <img className="projectDetails-icons" src="../../../../public/img/icons/RoundLight.png"></img>
