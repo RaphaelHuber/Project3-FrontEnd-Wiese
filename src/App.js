@@ -48,8 +48,8 @@ class App extends Component {
       <div>
         <OurNavbar userInSession={this.state.loggedInUser} getUser={this.getTheUser}/>
         <Switch>
-          <Route exact path='/' render={(props) => <Main {...props}userInSession={this.state.loggedInUser} getUser={this.getTheUser} />} />
-          <Route exact path='/projectDetails/:id' component={ ProjectDetails } picture={this.state.pictures[0]}/>
+          <Route exact path='/' render={(props) => <Main {...props} userInSession={this.state.loggedInUser} getUser={this.getTheUser} />} />
+          <Route exact path='/projectDetails/:id' render={(props) => <ProjectDetails {...props} userInSession={this.state.loggedInUser} />} />
           <Route exact path='/myProfile' render={(props) => <UserProfile {...props} userInSession = {this.state.loggedInUser} />} />
         </Switch>
         <Footer/>
