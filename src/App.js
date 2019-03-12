@@ -7,6 +7,9 @@ import OurNavbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import AuthService from './components/auth/auth-service';
 import UserProfile from './components/pages/profile/UserProfile';
+import MyProjects from './components/pages/myProjects/MyProjects';
+import CreateProject from './components/pages/createProject/CreateProject';
+
 
 class App extends Component {
   constructor(props){
@@ -50,6 +53,8 @@ class App extends Component {
         <Switch>
           <Route exact path='/' render={(props) => <Main {...props} userInSession={this.state.loggedInUser} getUser={this.getTheUser} />} />
           <Route exact path='/projectDetails/:id' render={(props) => <ProjectDetails {...props} userInSession={this.state.loggedInUser} />} />
+          <Route exact path='/createProject' render={(props) => <CreateProject {...props} userInSession = {this.state.loggedInUser} />} />
+          <Route exact path='/myProjects' render={(props) => <MyProjects {...props} userInSession = {this.state.loggedInUser} />} />
           <Route exact path='/myProfile' render={(props) => <UserProfile {...props} userInSession = {this.state.loggedInUser} />} />
         </Switch>
         <Footer/>

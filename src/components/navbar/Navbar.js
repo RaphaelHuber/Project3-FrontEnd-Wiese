@@ -37,17 +37,17 @@ class OurNavbar extends Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <NavDropdown title="About Us" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/1.1">Who Are We</NavDropdown.Item>
-              <NavDropdown.Item href="#action/1.2">Our Mission</NavDropdown.Item>
+            <Nav.Link href="/allProjects">
+              All projects
+            </Nav.Link>
+            <NavDropdown title="My portfolio" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="/allProjects">
+                My investments
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/myProjects">
+                My projects
+              </NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title="Projects" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/2.1">All Projects</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">My Projects</NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="#myInvestments">My Investments</Nav.Link>
-            <Nav.Link href="#newsletter">Newsletter</Nav.Link>
-            <Nav.Link href="#contactUs">Contact Us</Nav.Link>
           </Nav>
           <Form inline>
             {logStatus}

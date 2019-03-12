@@ -47,7 +47,6 @@ class UserProfile extends Component {
 
   updateUser() {
     const { email, name, document, birthDate, address, credit, bank, account } = this.state;
-    console.log(email, name, document, birthDate);
     axios.patch(`http://localhost:5000/users/${this.props.userInSession._id}`, { email, name, document, birthDate, address, credit, bank, account });
   }
 
