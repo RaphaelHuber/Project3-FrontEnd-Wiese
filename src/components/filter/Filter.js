@@ -37,7 +37,7 @@ class Filter extends Component {
         <ArrowSortPair handleUp = {this.handleUp} handleDown = {this.handleDown} criteria = {'minimumInvestment'} criteriaDisplay = {'Minimum Inv.'}/>
         </Nav>
         <Nav>
-          <ArrowSortPair handleUp = {this.handleUp} handleDown = {this.handleDown} criteria = {'expectedReturn'} criteriaDisplay = {'ROI'}/>
+          <ArrowSortPair handleUp = {this.handleUp} handleDown = {this.handleDown} criteria = {'expectedReturn'} criteriaDisplay = {'Return on Inv.'}/>
         </Nav>
           <SourceFilter filterProjectsBySource = {this.props.filterProjectsBySource}/>
         </Navbar.Collapse>
