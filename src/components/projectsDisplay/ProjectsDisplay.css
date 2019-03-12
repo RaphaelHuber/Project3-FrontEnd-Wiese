@@ -1,7 +1,11 @@
 .projectsDisplay-minWidth {
-  min-width: 240px;
+  min-width: 350px;
 }
 
 .projectsDisplay-margin1 {
-  margin: 5% auto;
+  margin-bottom: 3%;
+}
+
+.projectDisplay-btnMargin1 {
+  margin: auto auto 5% auto;
 }

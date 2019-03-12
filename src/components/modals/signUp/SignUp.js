@@ -62,7 +62,7 @@ class SignUp extends Component {
           <Form className="form">
             <Col>
               <FormGroup>
-                <Label>Username</Label>
+                <Label className="modalMargin1">Username</Label>
                 <Input
                   type="text"
                   name="username"

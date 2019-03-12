@@ -67,13 +67,13 @@ class projectsDisplay extends Component {
     return (
       <div>
         <Filter sortProjectsUp = {this.sortProjectsUp} sortProjectsDown = {this.sortProjectsDown} filterProjectsBySource = {this.filterProjectsBySource} filterProjectsByName = {this.filterProjectsByName}/>
-        <Container className="flexWrap projectsDisplay-margin1">
+        <Container className="flexWrap">
           <Row>
             {this.state.displayProjects && this.state.displayProjects.map((project, i) => {
-              return(<Col key={i} className="projectsDisplay-minWidth" xs={4}><ProjectCard projectData = {project} /></Col>)
+              return(<Col key={i} className="projectsDisplay-minWidth projectsDisplay-margin1" xs={4}><ProjectCard projectData = {project} /></Col>)
             })}
           </Row>
-          <Button className="btnSecondary center marginBtn1" variant="primary">Load More</Button>
+          <Button className="projectDisplay-btnMargin1 btnSecondary center marginBtn1" variant="primary">Load More</Button>
         </Container>
       </div>
     );

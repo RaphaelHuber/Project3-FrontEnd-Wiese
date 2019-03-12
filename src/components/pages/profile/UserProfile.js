@@ -4,6 +4,7 @@ import { Col, FormGroup, Label, Input} from 'reactstrap';
 import './UserProfile.css';
 import AddFunds from '../../modals/addFunds/AddFunds';
 import axios from 'axios';
+import NumberFormat from 'react-number-format';
 
 class UserProfile extends Component {
   constructor(props) {
@@ -83,6 +84,7 @@ class UserProfile extends Component {
                 />
                 <Label>Document</Label>
                 <Input
+                  thousandSeparator={true} 
                   type="number"
                   name="document"
                   placeholder="000000000"

@@ -57,6 +57,10 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 0 !important;
 }
 
+.modalMargin1 {
+  margin-top: 12px;
+}
+
 .pointer {
   cursor: pointer;
 }

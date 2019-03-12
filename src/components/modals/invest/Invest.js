@@ -32,9 +32,13 @@ class Invest extends Component {
     this.setState({ show: false });
   }
 
-  handleChange(event) {  
+  numberWithCommas(numb) {
+    return numb.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
+  handleChange(event) {
     const { value } = event.target;
-    this.setState({invAmount: value});
+    this.setState({ invAmount: value });
   }
 
   handleFormSubmit(event) {
@@ -74,16 +78,13 @@ class Invest extends Component {
               <FormGroup className="spaceEven">
                 <Button variant="primary" 
                 className="btnBgColorSecondary invest-boxes center-text"
-                onClick={this.changeAmount} value={this.props.data.minimumInvestment * 2}>
-                {this.props.data.minimumInvestment * 2} $</Button>
+                onClick={this.changeAmount} value={this.props.data.minimumInvestment * 2}>$ {this.props.data.minimumInvestment * 2}</Button>
                 <Button variant="primary" 
                 className="btnBgColorSecondary invest-boxes center-text"
-                onClick={this.changeAmount} value={this.props.data.minimumInvestment * 5}>
-                {this.props.data.minimumInvestment * 5} $</Button>
+                onClick={this.changeAmount} value={this.props.data.minimumInvestment * 5}>$ {this.props.data.minimumInvestment * 5}</Button>
                 <Button variant="primary" 
                 className="btnBgColorSecondary invest-boxes center-text"
-                onClick={this.changeAmount} value={this.props.data.minimumInvestment * 10}>
-                {this.props.data.minimumInvestment * 10} $</Button>
+                onClick={this.changeAmount} value={this.props.data.minimumInvestment * 10}>$ {this.props.data.minimumInvestment * 10}</Button>
               </FormGroup>
             </Col>
             <Col>
@@ -92,10 +93,10 @@ class Invest extends Component {
                 <div className="containerRow">
                   <img className="invest-currencyIcon" src="../../../../public/img/icons/dollarSign.png" />
                   <Input 
-                    type="Number"
-                    placeholder= {`${this.props.data.minimumInvestment} min.`}
-                    value={this.state.invAmount}
-                    onChange={e => this.handleChange(e)}
+                  type="text"
+                  placeholder= {`${this.props.data.minimumInvestment} min.`}
+                  value={this.state.invAmount}
+                  onChange={e => this.handleChange(e)}
                   />
                 </div>
               </FormGroup>

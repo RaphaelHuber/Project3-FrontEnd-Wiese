@@ -20,13 +20,16 @@ class projectCard extends React.Component {
           <Card.Text className="projectCard-overflow">
           {this.props.projectData.description}
           </Card.Text>
-          <Link to={`/projectDetails/${this.props.projectData._id}`}>
-            <Button variant="primary">More</Button>
-          </Link>
-        </Card.Body>
-      </Card>
-    );
-  }
-}
-
+          <div className="conatinerRow projectCard-margin1">
+            <Link to={`/projectDetails/${this.props.projectData._id}`}>
+              <Button variant="primary">More Details</Button>
+            </Link>
+            <img className="projectCard-sourceIcon" src={`../../../../public/img/icons/${this.props.projectData.energySource}Colored.png`}/>
+            </div>
+            </Card.Body>
+            </Card>
+            );
+          }
+        }
+        
 export default projectCard;

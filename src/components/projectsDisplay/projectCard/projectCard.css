@@ -8,3 +8,12 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+
+.projectCard-sourceIcon {
+  width: 35px;
+  float: right;
+}
+
+.projectCard-margin1 {
+  margin: 1.25rem auto auto auto;
+}

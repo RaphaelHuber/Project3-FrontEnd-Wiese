@@ -58,7 +58,7 @@ class LogIn extends Component {
           </Modal.Header>
           <Form className="form">
             <Col>
-              <FormGroup>
+              <FormGroup className="modalMargin1">
                 <Label>Username</Label>
                 <Input
                   type="text"
