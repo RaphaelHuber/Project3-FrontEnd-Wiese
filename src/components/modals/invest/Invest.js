@@ -78,16 +78,16 @@ class Invest extends Component {
               <FormGroup className="spaceEven">
                 <Button variant="primary" 
                 className="btnBgColorSecondary invest-boxes center-text"
-                onClick={this.changeAmount} value={this.props.data.minimumInvestment}>
-                {this.props.data.minimumInvestment} $</Button>
-                <Button variant="primary" 
-                className="btnBgColorSecondary invest-boxes center-text"
                 onClick={this.changeAmount} value={this.props.data.minimumInvestment * 2}>
                 {this.props.data.minimumInvestment * 2} $</Button>
                 <Button variant="primary" 
                 className="btnBgColorSecondary invest-boxes center-text"
                 onClick={this.changeAmount} value={this.props.data.minimumInvestment * 5}>
                 {this.props.data.minimumInvestment * 5} $</Button>
+                <Button variant="primary" 
+                className="btnBgColorSecondary invest-boxes center-text"
+                onClick={this.changeAmount} value={this.props.data.minimumInvestment * 10}>
+                {this.props.data.minimumInvestment * 10} $</Button>
               </FormGroup>
             </Col>
             <Col>
