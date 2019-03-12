@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './ProjectsDetails.css';
+import './ProjectDetails.css';
 import InvProgress from '../../invProgress/InvProgress.js'
 import TabbedComp from '../../tabbedComp/TabbedComp.js';
 import InvSummary from '../../invSummary/InvSummary.js'

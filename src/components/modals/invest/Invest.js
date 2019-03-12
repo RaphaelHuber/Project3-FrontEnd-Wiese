@@ -39,18 +39,13 @@ class Invest extends Component {
   handleFormSubmit(event) {
     event.preventDefault();
     const investor = this.props.userInSession._id;
-    // console.log('user in session invest', investor)
     const project = this.props.data._id;
-    // console.log('project invest', project)
     const invAmount = this.state.invAmount;
-    // console.log('invAmount invest', invAmount)
 
     
     this.service.invest(investor, project, invAmount)
     .then((response) => {
         this.setState({ investor: '', project: '', invAmount: '' });
-
-        // have to pass the getUser function via props
         this.props.getUser(response);
         this.handleClose();
       })
