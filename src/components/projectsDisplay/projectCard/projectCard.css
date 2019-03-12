@@ -1,3 +1,10 @@
-.projectCard-minSize {
-  min-width: 240px !important;
+.projectCard-img {
+  height: 34vh;
+}
+
+.projectCard-overflow {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }

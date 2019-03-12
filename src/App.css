@@ -46,5 +46,21 @@ input[type=number]::-webkit-outer-spin-button {
 
 .spaceEven {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-evenly !important;
+}
+.spaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+.noPadding {
+  padding: 0 !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+p {
+  margin-bottom: 0.4rem !important;
 }

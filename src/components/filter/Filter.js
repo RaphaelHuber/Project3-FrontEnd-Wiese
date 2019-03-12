@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import './Filter.css';
-import NameFilter from './NameFilter';
-import ArrowSortPair from './ArrowSortPair';
-import SourceFilter from './SourceFilter';
+import NameFilter from './nameFilter/NameFilter';
+import ArrowSortPair from './arrowSortPair/ArrowSortPair.js';
+import SourceFilter from './sourceFilter/SourceFilter.js';
 
 
 class Filter extends Component {
@@ -28,16 +28,18 @@ class Filter extends Component {
     return (
       <Navbar bg="invisible" expand="lg" className="filter-marginMain filter-barStyle">
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <NameFilter filterProjectsByName = {this.props.filterProjectsByName} />
-            <ArrowSortPair handleUp = {this.handleUp} handleDown = {this.handleDown} criteria = {'expectedReturn'} criteriaDisplay = {'ROI'}/>
-            <ArrowSortPair handleUp = {this.handleUp} handleDown = {this.handleDown} criteria = {'minimumInvestment'} criteriaDisplay = {'Minimum Inv.'}/>
-            <ArrowSortPair handleUp = {this.handleUp} handleDown = {this.handleDown} criteria = {'targetAmount'} criteriaDisplay = {'Target'}/>
-          </Nav>
-          <div className="filter-boxSize1">
-            <SourceFilter filterProjectsBySource = {this.props.filterProjectsBySource}/>
-          </div>
+        <Navbar.Collapse id="basic-navbar-nav" className="spaceBetween">
+        <NameFilter filterProjectsByName = {this.props.filterProjectsByName} />
+        <Nav>
+        <ArrowSortPair handleUp = {this.handleUp} handleDown = {this.handleDown} criteria = {'targetAmount'} criteriaDisplay = {'Target'}/>
+        </Nav>
+        <Nav>
+        <ArrowSortPair handleUp = {this.handleUp} handleDown = {this.handleDown} criteria = {'minimumInvestment'} criteriaDisplay = {'Minimum Inv.'}/>
+        </Nav>
+        <Nav>
+          <ArrowSortPair handleUp = {this.handleUp} handleDown = {this.handleDown} criteria = {'expectedReturn'} criteriaDisplay = {'ROI'}/>
+        </Nav>
+          <SourceFilter filterProjectsBySource = {this.props.filterProjectsBySource}/>
         </Navbar.Collapse>
       </Navbar>
     ) 
