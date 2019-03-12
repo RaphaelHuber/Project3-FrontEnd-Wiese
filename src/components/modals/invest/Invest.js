@@ -4,6 +4,7 @@ import './Invest.css';
 import { Col, FormGroup, Label, Input} from 'reactstrap';
 import InvService from '../../investments/inv-service.js';
 
+
 class Invest extends Component {
   constructor(props, context) {
     super(props, context);
