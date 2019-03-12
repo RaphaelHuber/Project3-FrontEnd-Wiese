@@ -1,8 +1,9 @@
-import React, { Component, PropTypes } from 'react';
-import { Form } from 'react-bootstrap';
+import React, { Component } from 'react';
+import { Button, Form } from 'react-bootstrap';
 import { Col, FormGroup, Label, Input} from 'reactstrap';
 import './UserProfile.css';
 import AddFunds from '../../modals/addFunds/AddFunds';
+import axios from 'axios';
 
 class UserProfile extends Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class UserProfile extends Component {
     this.state = {}
 
     this.updateCredit = this.updateCredit.bind(this);
+    this.updateUser = this.updateUser.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -43,6 +45,12 @@ class UserProfile extends Component {
     this.setState({credit: newCredit})
   }
 
+  updateUser() {
+    const { email, name, document, birthDate, address, credit, bank, account } = this.state;
+    console.log(email, name, document, birthDate);
+    axios.patch(`http://localhost:5000/users/${this.props.userInSession._id}`, { email, name, document, birthDate, address, credit, bank, account });
+  }
+
   render() {
     let userHTML;
 
@@ -56,16 +64,13 @@ class UserProfile extends Component {
                 <Input
                   type="text"
                   name="username"
-                  placeholder="myUsername"
                   value={this.state.username}
-                  onChange={ e => this.handleChange(e)}
+                  readOnly = {true}
                 />
                 <Label>Email</Label>
                 <Input
                   type="email"
                   name="email"
-                  id=""
-                  placeholder="myEmail@provider.com"
                   value={this.state.email}
                   onChange={ e => this.handleChange(e)}
                 />
@@ -128,6 +133,7 @@ class UserProfile extends Component {
               </FormGroup>
             </Col>
           </Form>
+          <Button variant="primary" onClick={this.updateUser}>Update</Button>
       </div>)
     } else {
       userHTML = <h1>Loading</h1>
