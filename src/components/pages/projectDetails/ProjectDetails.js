@@ -27,7 +27,7 @@ class ProjectDetails extends Component {
   }
   
   render() {
-    // make sure that the image src is rendered when existing
+    // makes sure that the image src is rendered when existing
     const imgSrc = (this.state.pictures) ? this.state.pictures[0] : "";
     return (
       <div>
@@ -36,7 +36,7 @@ class ProjectDetails extends Component {
           <div className="projectDetails-float">
             <div className="containerRow projectDetails-align">
               <img className="projectDetails-icons" src="../../../../public/img/icons/RoundLight.png"></img>
-              <p>{this.state.raisedAmount} $</p>
+              <p>{`$ ${this.state.raisedAmount}`}</p>
               <img className="projectDetails-icons" src="../../../../public/img/icons/RoundLight.png"></img>
               <p>230 Investors</p>
             </div>

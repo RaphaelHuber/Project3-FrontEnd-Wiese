@@ -14,11 +14,11 @@ class SourceFilter extends Component {
   
   render() {
     return (
-      <div className="sourceFilter-boxSize1">
-        <img className="energySybmols-icons pointer" src={ windPowerDark } onClick = {() => this.props.filterProjectsBySource('Wind')} />
-        <img className="energySybmols-icons pointer" src={ solarDark } onClick = {() => this.props.filterProjectsBySource('Solar')}/>
-        <img className="energySybmols-icons pointer" src={ hydroDark } onClick = {() => this.props.filterProjectsBySource('Hydro')}/>
-        <img className="energySybmols-icons pointer" src={ biomassDark } onClick = {() => this.props.filterProjectsBySource('Bio')}/>
+      <div className="sourceFilter-boxSize1 spaceBetween">
+        <img className="sourceFilter-icons pointer" src={ windPowerDark } onClick = {() => this.props.filterProjectsBySource('Wind')} />
+        <img className="sourceFilter-icons pointer" src={ solarDark } onClick = {() => this.props.filterProjectsBySource('Solar')}/>
+        <img className="sourceFilter-icons pointer" src={ hydroDark } onClick = {() => this.props.filterProjectsBySource('Hydro')}/>
+        <img className="sourceFilter-icons pointer" src={ biomassDark } onClick = {() => this.props.filterProjectsBySource('Bio')}/>
       </div>
     )
   }

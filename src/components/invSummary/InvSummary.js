@@ -13,7 +13,7 @@ class InvSummary extends Component {
               Target Sum:
             </div>
             <div className="center">
-              {this.props.project.targetAmount} $
+              {`$ ${this.props.project.targetAmount}`}
             </div>
           </div>
           <div className="containerCol invSummary-margin1">
