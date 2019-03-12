@@ -25,12 +25,12 @@ button {
 
 .containerCol {
   display: flex;
-  flex-direction: column;
+  flex-direction: column !important;
 }
 
 .containerRow {
   display: flex;
-  flex-direction: row;
+  flex-direction: row !important;
 }
 
 .flexWrap {

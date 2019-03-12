@@ -2,12 +2,8 @@
   margin-top: 5%;
 }
 
-.footer-Col {
-  min-width: 50% !important;
-}
-
 .footer-margin2 {
-  margin: 8% 48%;
+  margin: auto 10%;
 }
 
 .footer-padding1 {
@@ -16,5 +12,6 @@
 
 .footer-title {
   color: rgba(0,0,0,.9);
+  margin-top: 1rem;
 }
 
