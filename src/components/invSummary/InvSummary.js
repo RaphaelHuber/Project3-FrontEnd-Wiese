@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import './InvSummary.css';
 import Invest from '../modals/invest/Invest.js';
 
@@ -51,7 +51,7 @@ class InvSummary extends Component {
               {this.props.project.paymentPeriod}
             </div>  
           </Card.Text>
-          <Invest data={ this.props.project.minimumInvestment}/>
+          <Invest data={ this.props.project} userInSession={this.props.userInSession}/>
         </Card.Body>
       </Card>
     )

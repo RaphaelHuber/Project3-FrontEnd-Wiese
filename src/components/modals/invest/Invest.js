@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Button, Modal, Form, Span } from 'react-bootstrap';
+import { Button, Modal, Form} from 'react-bootstrap';
 import './Invest.css';
 import { Col, FormGroup, Label, Input} from 'reactstrap';
-import AuthService from '../../auth/auth-service';
+import InvService from '../../investments/inv-service.js';
 
 class Invest extends Component {
   constructor(props, context) {
@@ -16,9 +16,11 @@ class Invest extends Component {
 
     this.state = {
       show: false,
+      investor: '',
+      project:'',
       invAmount: ''
     };
-    this.service = new AuthService();
+    this.service = new InvService();
   }
   
   handleShow() {
@@ -35,6 +37,19 @@ class Invest extends Component {
   }
 
   handleFormSubmit(event) {
+    event.preventDefault();
+    const investor = this.props.userInSession._id;
+    const project = this.props.data._id;
+    const invAmount = this.state.invAmount;
+
+    
+    this.service.invest(investor, project, invAmount)
+    .then((response) => {
+        this.setState({ investor: '', project: '', invAmount: '' });
+        this.props.getUser(response);
+        this.handleClose();
+      })
+      .catch(error => console.log(error));
   }
 
   changeAmount(event) {
@@ -58,16 +73,16 @@ class Invest extends Component {
               <FormGroup className="spaceEven">
                 <Button variant="primary" 
                 className="btnBgColorSecondary invest-boxes center-text"
-                onClick={this.changeAmount} value={this.props.data * 2}>
-                {this.props.data * 2} $</Button>
+                onClick={this.changeAmount} value={this.props.data.minimumInvestment * 2}>
+                {this.props.data.minimumInvestment * 2} $</Button>
                 <Button variant="primary" 
                 className="btnBgColorSecondary invest-boxes center-text"
-                onClick={this.changeAmount} value={this.props.data * 5}>
-                {this.props.data * 5} $</Button>
+                onClick={this.changeAmount} value={this.props.data.minimumInvestment * 5}>
+                {this.props.data.minimumInvestment * 5} $</Button>
                 <Button variant="primary" 
                 className="btnBgColorSecondary invest-boxes center-text"
-                onClick={this.changeAmount} value={this.props.data * 10}>
-                {this.props.data * 10} $</Button>
+                onClick={this.changeAmount} value={this.props.data.minimumInvestment * 10}>
+                {this.props.data.minimumInvestment * 10} $</Button>
               </FormGroup>
             </Col>
             <Col>
@@ -77,7 +92,7 @@ class Invest extends Component {
                   <img className="invest-currencyIcon" src="../../../../public/img/icons/dollarSign.png" />
                   <Input 
                     type="Number"
-                    placeholder= {`Min. amount is ${this.props.data} $`}
+                    placeholder= {`${this.props.data.minimumInvestment} min.`}
                     value={this.state.invAmount}
                     onChange={e => this.handleChange(e)}
                   />
@@ -86,7 +101,7 @@ class Invest extends Component {
             </Col>
           </Form>
           <Modal.Footer>
-            <Button variant="primary" onClick={this.handleClose} >
+            <Button variant="primary" onClick={this.handleFormSubmit} >
               Send
             </Button>
           </Modal.Footer>
