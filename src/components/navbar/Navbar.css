@@ -1,0 +1,7 @@
+.navbar-username {
+  color: white;
+}
+
+.navbar-username:hover {
+  color: rgba(2, 180, 168, 1);
+}
