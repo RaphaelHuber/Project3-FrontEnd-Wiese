@@ -7,7 +7,7 @@ class projectCard extends React.Component {
   render() {
     return (
       <Card>
-        <Card.Img className="projectCard-img" variant="top" src={ this.props.projectData.pictures[0] } />
+        <Card.Img className="projectCard-img" variant="top" src={ this.props.projectData.picture } />
         <Card.Body>
           <Card.Title className="projectCard-btmMargin">{this.props.projectData.name} - {this.props.projectData.country}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">{this.props.projectData.owner.name}</Card.Subtitle>
