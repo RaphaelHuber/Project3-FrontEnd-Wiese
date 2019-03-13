@@ -92,7 +92,7 @@ class SignUp extends Component {
             </Col>
             <Col>
               <FormGroup>
-                <Label for="examplePassword">Password</Label>
+                <Label for="examplePassword">Password (min. 8 digits)</Label>
                 <Input 
                   type="password"
                   name="password"
