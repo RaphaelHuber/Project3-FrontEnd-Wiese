@@ -21,6 +21,7 @@ class App extends Component {
     this.service = new AuthService();
     this.getTheUser = this.getTheUser.bind(this);
     this.fetchUser = this.fetchUser.bind(this);
+    this.updateUser = this.updateUser.bind(this);
   }
 
   fetchUser(){
@@ -39,6 +40,18 @@ class App extends Component {
     }
   }
 
+  updateUser(){
+    if(this.service.loggedin()) {
+      this.service.loggedin()
+      .then(response => {
+        this.setState({
+          loggedInUser: response
+        }) 
+      })
+    }
+  }
+
+
   getTheUser(userObj) {
     this.setState({
       loggedInUser: userObj
@@ -52,7 +65,7 @@ class App extends Component {
         <OurNavbar userInSession={this.state.loggedInUser} getUser={this.getTheUser}/>
         <Switch>
           <Route exact path='/' render={(props) => <Main {...props} userInSession={this.state.loggedInUser} getUser={this.getTheUser} />} />
-          <Route exact path='/projectDetails/:id' render={(props) => <ProjectDetails {...props} userInSession={this.state.loggedInUser} />} />
+          <Route exact path='/projectDetails/:id' render={(props) => <ProjectDetails {...props} userInSession={this.state.loggedInUser} getUser={this.getTheUser} updateUser = {this.updateUser}/>} />
           <Route exact path='/createProject' render={(props) => <CreateProject {...props} userInSession = {this.state.loggedInUser} />} />
           <Route exact path='/myProjects' render={(props) => <MyProjects {...props} userInSession = {this.state.loggedInUser} />} />
           <Route exact path='/myProfile' render={(props) => <UserProfile {...props} userInSession = {this.state.loggedInUser} />} />

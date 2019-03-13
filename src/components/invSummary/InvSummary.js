@@ -1,10 +1,23 @@
 import React, { Component } from 'react';
 import { Card } from 'react-bootstrap';
 import './InvSummary.css';
-import Invest from '../modals/invest/Invest.js';
+import Invest from '../modals/invest/Invest';
+import LogIn from '../modals/logIn/LogIn';
 
 class InvSummary extends Component {
   render() {
+
+    let summaryButton;
+    if (this.props.userInSession) {
+      summaryButton = 
+        <Invest data={this.props.project} userInSession={this.props.userInSession} updateUser = {this.props.updateUser}/>
+    } else {
+      summaryButton = (<div>
+          <LogIn className="center" userInSession={this.props.loggedInUser} getUser={this.props.getUser}/>
+          <span>Please log in to invest</span>
+        </div>);
+    }
+
     return (
       <Card className="invSummary-size">
         <Card.Header className="containerRow">
@@ -51,7 +64,7 @@ class InvSummary extends Component {
               {this.props.project.paymentPeriod}
             </div>  
           </Card.Text>
-          <Invest data={ this.props.project} userInSession={this.props.userInSession}/>
+          {summaryButton}
         </Card.Body>
       </Card>
     )
