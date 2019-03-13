@@ -10,7 +10,7 @@ class projectCard extends React.Component {
         <Card.Img className="projectCard-img" variant="top" src={ this.props.projectData.picture } />
         <Card.Body>
           <Card.Title className="projectCard-btmMargin">{this.props.projectData.name} - {this.props.projectData.country}</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">{this.props.projectData.owner}</Card.Subtitle>
+          <Card.Subtitle className="mb-2 text-muted">{this.props.projectData.owner.username}</Card.Subtitle>
           <Card.Text> {`Target: $ 
           ${this.props.projectData.targetAmount} (min inv of $ ${this.props.projectData.minimumInvestment})`}
           </Card.Text>

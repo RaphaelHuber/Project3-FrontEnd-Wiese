@@ -84,7 +84,6 @@ class UserProfile extends Component {
                 />
                 <Label>Document</Label>
                 <Input
-                  thousandSeparator={true} 
                   type="number"
                   name="document"
                   placeholder="000000000"
