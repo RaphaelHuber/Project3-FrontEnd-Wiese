@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import ProjectCard from './projectCard/projectCard';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Row, Col, Button } from 'react-bootstrap';
 import './ProjectsDisplay.css';
 import Filter from '../filter/Filter';
 
@@ -65,12 +65,12 @@ class projectsDisplay extends Component {
 
   render() {
     return (
-      <div>
+      <div id="allProjects">
         <Filter sortProjectsUp = {this.sortProjectsUp} sortProjectsDown = {this.sortProjectsDown} filterProjectsBySource = {this.filterProjectsBySource} filterProjectsByName = {this.filterProjectsByName}/>
         <div className="flexWrap projectsDisplay-margin2">
           <Row>
             {this.state.displayProjects && this.state.displayProjects.map((project, i) => {
-              return(<Col key={i} className="projectsDisplay-minWidth projectsDisplay-margin1 noPadding" xs={4}><ProjectCard projectData = {project} /></Col>)
+              return(<Col key={i} className="projectsDisplay-minWidth projectsDisplay-margin1 noPadding hvr-float" xs={4}><ProjectCard projectData = {project} /></Col>)
             })}
           </Row>
           <Button className="projectDisplay-btnMargin1 btnSecondary center marginBtn1" variant="primary">Load More</Button>

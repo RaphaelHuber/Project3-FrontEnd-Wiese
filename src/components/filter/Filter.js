@@ -26,7 +26,7 @@ class Filter extends Component {
 
   render() {
     return (
-      <Navbar bg="invisible" expand="lg" className="filter-marginMain filter-barStyle">
+      <Navbar expand="lg" className="filter-marginMain filter-barStyle">
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="spaceBetween">
         <NameFilter filterProjectsByName = {this.props.filterProjectsByName} />
