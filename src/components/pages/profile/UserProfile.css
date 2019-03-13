@@ -1,14 +1,15 @@
-.userProfile-size {
-  width: 35%;
-  /* height: 90%; */
-  min-width: 300px !important;
-  min-height: 350px;
-}
-
 .userProfile-margin1 {
-  margin: 2% auto;
+  margin: 2% 20%;
 }
 
-.userProfile-marginNum {
-  margin: auto 0 auto auto;
+.userProfile-marginTabs {
+  margin-top: 4.5vh;
+}
+
+.userProfile-marginTabContent {
+  margin-top: 5.7vh;
+}
+
+.userProfile-tabStyle {
+  color: rgba(2, 180, 168, 1);
 }

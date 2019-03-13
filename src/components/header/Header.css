@@ -10,3 +10,9 @@
   margin-right: auto;
   text-align: center;
 }
+
+.header-slogan {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 6vw;
+  color: rgba(247, 255, 254, .9);
+}

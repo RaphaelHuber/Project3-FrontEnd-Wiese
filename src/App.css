@@ -27,6 +27,14 @@ button {
   background-color: rgba(145, 234, 224, 1) !important;
 }
 
+.nav-link.active {
+  background-color: rgba(2, 180, 168, 1) !important;
+}
+
+.nav-link:hover {
+  color: rgba(2, 180, 168, 1);
+}
+
 .containerCol {
   display: flex;
   flex-direction: column !important;

@@ -11,11 +11,11 @@ class projectCard extends React.Component {
         <Card.Body>
           <Card.Title className="projectCard-btmMargin">{this.props.projectData.name} - {this.props.projectData.country}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">{this.props.projectData.owner}</Card.Subtitle>
-          <Card.Text> {`Target: $ 
+          <Card.Text><strong>Target: </strong>{`$ 
           ${this.props.projectData.targetAmount} (min inv of $ ${this.props.projectData.minimumInvestment})`}
           </Card.Text>
-          <Card.Text>
-          {`Return: ${this.props.projectData.expectedReturn} %`}
+          <Card.Text><strong>Return: </strong>
+          {`${this.props.projectData.expectedReturn} %`}
           </Card.Text>
           <Card.Text className="projectCard-overflow">
           {this.props.projectData.description}
