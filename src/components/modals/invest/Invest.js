@@ -38,7 +38,16 @@ class Invest extends Component {
 
   handleChange(event) {
     const { value } = event.target;
-    this.setState({ invAmount: value });
+    const max = this.props.userInSession.credit;
+    if (value <= max) {
+      this.setState({
+        invAmount: value
+      });
+    } else {
+        this.setState({
+          invAmount: max
+        });
+      }
   }
 
   handleFormSubmit(event) {
@@ -46,12 +55,11 @@ class Invest extends Component {
     const investor = this.props.userInSession._id;
     const project = this.props.data._id;
     const invAmount = this.state.invAmount;
-
     
     this.service.invest(investor, project, invAmount)
     .then((response) => {
         this.setState({ investor: '', project: '', invAmount: '' });
-        this.props.getUser(response);
+        this.props.updateUser();
         this.handleClose();
       })
       .catch(error => console.log(error));
@@ -65,6 +73,8 @@ class Invest extends Component {
   }
 
   render() {
+    let creditWithCommas = this.numberWithCommas(this.props.userInSession.credit);
+    
     return (
       <div>
         <Button variant="primary"  className="invest-center" onClick={this.handleShow}>INVEST</Button>
@@ -89,12 +99,12 @@ class Invest extends Component {
             </Col>
             <Col>
               <FormGroup>
-                <Label className="invest-labelMarg1">Amount</Label>
+                <Label className="invest-labelMarg1">Credit available: ${creditWithCommas}</Label>
                 <div className="containerRow">
                   <img className="invest-currencyIcon" src="../../../../public/img/icons/dollarSign.png" />
                   <Input 
                   type="text"
-                  placeholder= {`${this.props.data.minimumInvestment} min.`}
+                  placeholder= {this.props.data.minimumInvestment}
                   value={this.state.invAmount}
                   onChange={e => this.handleChange(e)}
                   />
