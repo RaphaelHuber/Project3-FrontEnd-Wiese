@@ -54,6 +54,7 @@ class CreateProject extends Component {
                 <Input
                   type="text"
                   name="name"
+                  maxLength="24"
                   value={this.state.name}
                   onChange={ e => this.handleChange(e)}
                 />
