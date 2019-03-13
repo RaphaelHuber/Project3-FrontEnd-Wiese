@@ -167,13 +167,3 @@ class UserProfile extends Component {
 }
 
 export default UserProfile;
-
-
-//      <div>
-//         <Form className="form">
-//             <Col>
-              
-//             </Col>
-//           </Form>
-//           <Button variant="primary" onClick={this.updateUser}>Update</Button>
-//       </div>
