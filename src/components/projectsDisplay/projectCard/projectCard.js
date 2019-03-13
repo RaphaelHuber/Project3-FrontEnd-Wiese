@@ -5,7 +5,6 @@ import './projectCard.css';
 
 class projectCard extends React.Component {
   render() {
-    console.log('owner', this.props.projectData.owner)
     return (
       <Card className="projectCard-margin2">
         <Card.Img className="projectCard-img" variant="top" src={ this.props.projectData.picture } />
