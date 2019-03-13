@@ -27,7 +27,7 @@ class SignUp extends Component {
   }
 
   handleClose() {
-    this.setState({ show: false });
+    this.setState({ show: false, username: '', email: '', password: '', errorMessage: ''});
   }
 
   handleChange(event) {  
@@ -105,7 +105,7 @@ class SignUp extends Component {
             </Col>
           </Form>
           <Modal.Footer>
-            <FormText className="signUp-errorMessage">{this.state.errorMessage}</FormText>
+            <FormText className="authErrorMessage">{this.state.errorMessage}</FormText>
             <Button variant="primary" onClick={this.handleFormSubmit}>
               Send
             </Button>

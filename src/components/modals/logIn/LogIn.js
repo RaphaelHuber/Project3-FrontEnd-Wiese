@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Modal, Form } from 'react-bootstrap';
 import './LogIn.css';
-import { Col, Group, FormGroup, Label, Input} from 'reactstrap';
+import { Col, FormGroup, Label, Input, FormText} from 'reactstrap';
 import AuthService from '../../auth/auth-service';
 
 class LogIn extends Component {
@@ -26,7 +26,7 @@ class LogIn extends Component {
   }
 
   handleClose() {
-    this.setState({ show: false });
+    this.setState({ show: false, username: '', password: '', errorMessage: ''});
   }
 
   handleChange(event) {  
@@ -42,7 +42,11 @@ class LogIn extends Component {
     this.service.login(username, password)
       .then((response) => {
         this.setState({ username: '', password: '' });
-        this.props.getUser(response);
+        if (response.message) {
+          this.setState({ errorMessage: response.message });
+        } else {
+          this.props.getUser(response);
+        }
       })
       .catch(error => console.log(error));
   }
@@ -85,6 +89,7 @@ class LogIn extends Component {
             </Col>
           </Form>
           <Modal.Footer>
+            <FormText className="authErrorMessage">{this.state.errorMessage}</FormText>
             <Button variant="primary" onClick={this.handleFormSubmit}>
               Send
             </Button>
