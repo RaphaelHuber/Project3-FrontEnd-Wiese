@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Modal, Form } from 'react-bootstrap';
 import './SignUp.css';
-import { Col, FormGroup, Label, Input} from 'reactstrap';
+import { Col, FormGroup, Label, Input, FormText} from 'reactstrap';
 import AuthService from '../../auth/auth-service';
 
 class SignUp extends Component {
@@ -27,7 +27,7 @@ class SignUp extends Component {
   }
 
   handleClose() {
-    this.setState({ show: false });
+    this.setState({ show: false, username: '', email: '', password: '', errorMessage: ''});
   }
 
   handleChange(event) {  
@@ -44,8 +44,12 @@ class SignUp extends Component {
     this.service.signup(username, email, password)
       .then((response) => {
         this.setState({ username: '', email: '', password: '' });
-        this.props.getUser(response);
-        this.handleClose();
+        if (response.message) {
+          this.setState({ errorMessage: response.message });
+        } else {
+          this.props.getUser(response);
+          this.handleClose();
+        }
       })
       .catch(error => console.log(error));
   }
@@ -88,7 +92,7 @@ class SignUp extends Component {
             </Col>
             <Col>
               <FormGroup>
-                <Label for="examplePassword">Password</Label>
+                <Label for="examplePassword">Password (min. 8 digits)</Label>
                 <Input 
                   type="password"
                   name="password"
@@ -101,6 +105,7 @@ class SignUp extends Component {
             </Col>
           </Form>
           <Modal.Footer>
+            <FormText className="authErrorMessage">{this.state.errorMessage}</FormText>
             <Button variant="primary" onClick={this.handleFormSubmit}>
               Send
             </Button>

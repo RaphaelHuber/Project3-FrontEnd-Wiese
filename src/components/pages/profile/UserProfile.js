@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { Button, Form } from 'react-bootstrap';
-import { Col, FormGroup, Label, Input} from 'reactstrap';
+import { Button, Form, Col, Row, Nav, Tab  } from 'react-bootstrap';
+import { FormGroup, Label, Input } from 'reactstrap';
 import './UserProfile.css';
 import AddFunds from '../../modals/addFunds/AddFunds';
 import axios from 'axios';
-import NumberFormat from 'react-number-format';
 
 class UserProfile extends Component {
   constructor(props) {
@@ -56,85 +55,107 @@ class UserProfile extends Component {
 
     if(this.props.userInSession) {
       <h1>{this.props.userInSession.username}</h1>
-      userHTML = ( <div>
-        <Form className="form">
-            <Col>
-              <FormGroup >
-                <Label>Username</Label>
-                <Input
-                  type="text"
-                  name="username"
-                  value={this.state.username}
-                  readOnly = {true}
-                />
-                <Label>Email</Label>
-                <Input
-                  type="email"
-                  name="email"
-                  value={this.state.email}
-                  onChange={ e => this.handleChange(e)}
-                />
-                <Label>Name</Label>
-                <Input
-                  type="text"
-                  name="name"
-                  placeholder="John Green"
-                  value={this.state.name}
-                  onChange={ e => this.handleChange(e)}
-                />
-                <Label>Document</Label>
-                <Input
-                  type="number"
-                  name="document"
-                  placeholder="000000000"
-                  value={this.state.document}
-                  onChange={ e => this.handleChange(e)}
-                />
-                <Label>Birthdate</Label>
-                <Input
-                  type="date"
-                  name="birthDate"
-                  placeholder="000000"
-                  value={this.state.birthDate}
-                  onChange={ e => this.handleChange(e)}
-                />
-                <Label>Address</Label>
-                <Input
-                  type="text"
-                  name="address"
-                  placeholder="Nature Avenue, 365"
-                  value={this.state.address}
-                  onChange={ e => this.handleChange(e)}
-                />
-                <Label>Credit</Label>
-                <Input
-                  type="Number"
-                  name="credit"
-                  value={this.state.credit}
-                  readOnly = {true}
-                />
-                <AddFunds userID = {this.props.userInSession._id} oldCredit = {this.state.credit} updateCredit = {this.updateCredit}/>
-                <Label>Bank</Label>
-                <Input
-                  type="number"
-                  name="bank"
-                  placeholder="000"
-                  value={this.state.bank}
-                  onChange={ e => this.handleChange(e)}
-                />
-                <Label>Account</Label>
-                <Input
-                  type="number"
-                  name="account"
-                  placeholder="00000"
-                  value={this.state.account}
-                  onChange={ e => this.handleChange(e)}
-                />
-              </FormGroup>
-            </Col>
-          </Form>
-          <Button variant="primary" onClick={this.updateUser}>Update</Button>
-      </div>)
+      userHTML = (
+        <div className="userProfile-margin1">
+          <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+            <Row>
+              <Col sm={3}>
+                <Nav variant="pills" className="flex-column userProfile-marginTabs">
+                  <Nav.Item>
+                    <Nav.Link eventKey="first">Personal Informations</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey="second">Financials Details</Nav.Link>
+                  </Nav.Item>
+                </Nav>
+              </Col>
+              <Col sm={9}>
+                <Tab.Content>
+                  <Tab.Pane eventKey="first">
+                    <FormGroup >
+                      <Label>Username</Label>
+                      <Input
+                        type="text"
+                        name="username"
+                        value={this.state.username}
+                        readOnly = {true}
+                      />
+                      <Label>Email</Label>
+                      <Input
+                        type="email"
+                        name="email"
+                        value={this.state.email}
+                        onChange={ e => this.handleChange(e)}
+                      />
+                      <Label>Name</Label>
+                      <Input
+                        type="text"
+                        name="name"
+                        placeholder="John Green"
+                        value={this.state.name}
+                        onChange={ e => this.handleChange(e)}
+                      />
+                      <Label>Document</Label>
+                      <Input
+                        type="number"
+                        name="document"
+                        placeholder="000000000"
+                        value={this.state.document}
+                        onChange={ e => this.handleChange(e)}
+                      />
+                      <Label>Birthdate</Label>
+                      <Input
+                        type="date"
+                        name="birthDate"
+                        placeholder="000000"
+                        value={this.state.birthDate}
+                        onChange={ e => this.handleChange(e)}
+                      />
+                      <Label>Address</Label>
+                      <Input
+                        type="text"
+                        name="address"
+                        placeholder="Nature Avenue, 365"
+                        value={this.state.address}
+                        onChange={ e => this.handleChange(e)}
+                      />
+                    </FormGroup>
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="second">
+                    <FormGroup className="userProfile-marginTabContent">
+                      <Label>Credit</Label>
+                      <Input
+                        type="Number"
+                        name="credit"
+                        value={this.state.credit}
+                        readOnly = {true}
+                      />
+                      <AddFunds userID = {this.props.userInSession._id} oldCredit = {this.state.credit} updateCredit = {this.updateCredit}/>
+                      <Label>Bank</Label>
+                      <Input
+                        type="number"
+                        name="bank"
+                        placeholder="000"
+                        value={this.state.bank}
+                        onChange={ e => this.handleChange(e)}
+                      />
+                      <Label>Account</Label>
+                      <Input
+                        type="number"
+                        name="account"
+                        placeholder="00000"
+                        value={this.state.account}
+                        onChange={ e => this.handleChange(e)}
+                      />
+                    </FormGroup>
+                  </Tab.Pane>
+                </Tab.Content>
+                <Button variant="primary" onClick={this.updateUser}>Update</Button>
+              </Col>
+            </Row>
+          </Tab.Container>
+        </div>
+      )
     } else {
       userHTML = <h1>Loading</h1>
     }
