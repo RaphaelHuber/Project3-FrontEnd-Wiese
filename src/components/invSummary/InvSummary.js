@@ -18,6 +18,10 @@ class InvSummary extends Component {
         </div>);
     }
 
+    let daysRemaining = 60;
+    // let today = new Date();
+    // let daysRemaining = Math.floor(this.props.project.investmentPeriod / 12 * 365) * Math.abs(today - this.props.project.created_at) / 86400000;
+
     return (
       <Card className="invSummary-size">
         <Card.Header className="containerRow">
@@ -34,7 +38,7 @@ class InvSummary extends Component {
               Remaining Time:
             </div>
             <div className="center">
-              63 days
+              {daysRemaining} days
             </div>
           </div>
         </Card.Header>
@@ -45,12 +49,12 @@ class InvSummary extends Component {
               Return on Capital:
             </div>  
             <div className="invSummary-marginNum">
-            {this.props.project.expectedReturn}
+            {this.props.project.expectedReturn * 100}%
             </div>  
           </Card.Text>
           <Card.Text className="containerRow">
             <div>
-              Periodicity:
+              Periodicity (months):
             </div>  
             <div className="invSummary-marginNum">
             {this.props.project.periodicity}
@@ -58,7 +62,7 @@ class InvSummary extends Component {
           </Card.Text>
           <Card.Text className="containerRow">
             <div>
-              Duration:
+              Duration (months):
             </div>  
             <div className="invSummary-marginNum">
               {this.props.project.paymentPeriod}

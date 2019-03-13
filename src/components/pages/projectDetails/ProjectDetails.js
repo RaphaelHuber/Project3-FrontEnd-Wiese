@@ -11,7 +11,7 @@ class ProjectDetails extends Component {
     this.state = {}
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.getSingleProject();
   }
 
@@ -20,10 +20,20 @@ class ProjectDetails extends Component {
     axios.get(`http://localhost:5000/projects/${params.id}`)
     .then((response) => {
       this.setState(response.data);
+      const uniqueInvestors = this.countUniqueInvestors(response.data.investments)
+      this.setState({ uniqueInvestors })
     })
     .catch((err)=>{
         console.log(err)
     })
+  }
+
+  countUniqueInvestors(investments) {
+    let investors = [];
+    investments.forEach(investment => {
+      investors.push(investment.investor); 
+    });
+    return new Set(investors).size;
   }
   
   render() {
@@ -38,9 +48,9 @@ class ProjectDetails extends Component {
               <img className="projectDetails-icons" src="../../../../public/img/icons/RoundLight.png"></img>
               <p>{`$ ${this.state.raisedAmount}`}</p>
               <img className="projectDetails-icons" src="../../../../public/img/icons/RoundLight.png"></img>
-              <p>230 Investors</p>
+              <p>{this.state.uniqueInvestors} investors</p>
             </div>
-            <InvProgress/>
+            <InvProgress project={this.state}/>
           </div>
         </div>
         <div className="projectDetails-infoBox containerRow flexWrap">
