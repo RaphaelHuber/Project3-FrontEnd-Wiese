@@ -62,10 +62,10 @@ class UserProfile extends Component {
               <Col sm={3}>
                 <Nav variant="pills" className="flex-column userProfile-marginTabs">
                   <Nav.Item>
-                    <Nav.Link eventKey="first" className="userProfile-tabStyle">Personal Informations</Nav.Link>
+                    <Nav.Link eventKey="first">Personal Informations</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="second" className="userProfile-tabStyle">Financials Details</Nav.Link>
+                    <Nav.Link eventKey="second">Financials Details</Nav.Link>
                   </Nav.Item>
                 </Nav>
               </Col>
@@ -120,7 +120,6 @@ class UserProfile extends Component {
                         onChange={ e => this.handleChange(e)}
                       />
                     </FormGroup>
-                    <Button variant="primary" onClick={this.updateUser}>Update</Button>
                   </Tab.Pane>
                   <Tab.Pane eventKey="second">
                     <FormGroup className="userProfile-marginTabContent">
@@ -151,6 +150,7 @@ class UserProfile extends Component {
                     </FormGroup>
                   </Tab.Pane>
                 </Tab.Content>
+                <Button variant="primary" onClick={this.updateUser}>Update</Button>
               </Col>
             </Row>
           </Tab.Container>

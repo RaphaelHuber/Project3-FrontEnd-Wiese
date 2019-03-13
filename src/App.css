@@ -35,6 +35,15 @@ button {
   color: rgba(2, 180, 168, 1);
 }
 
+.nav-link {
+  color: rgba(2, 180, 168, 1);
+}
+
+.nav-item.active {
+  color: rgba(247, 255, 254, 1) !important;
+}
+
+
 .containerCol {
   display: flex;
   flex-direction: column !important;
