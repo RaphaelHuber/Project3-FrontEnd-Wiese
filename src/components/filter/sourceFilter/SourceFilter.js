@@ -44,10 +44,10 @@ class SourceFilter extends Component {
   render() {
     return (
       <div className="sourceFilter-boxSize1 spaceBetween">
-        <img src={ windDark } className={    this.state.active1 ? 'sourceFilter-icons-active sourceFilter-icons pointer' : 'sourceFilter-icons pointer'} onClick = {() => { this.props.filterProjectsBySource('Wind'); this.toggleClassIcon1()}} />
-        <img src={ solarDark } className={    this.state.active2 ? 'sourceFilter-icons-active sourceFilter-icons pointer' : 'sourceFilter-icons pointer'} onClick = {() => { this.props.filterProjectsBySource('Solar'); this.toggleClassIcon2()}}/>
-        <img src={ hydroDark } className={    this.state.active3 ? 'sourceFilter-icons-active sourceFilter-icons pointer' : 'sourceFilter-icons pointer'} onClick = {() => { this.props.filterProjectsBySource('Hydro'); this.toggleClassIcon3()}}/>
-        <img src={ bioDark } className={    this.state.active4 ? 'sourceFilter-icons-active sourceFilter-icons pointer' : 'sourceFilter-icons pointer'} onClick = {() => { this.props.filterProjectsBySource('Bio'); this.toggleClassIcon4()}}/>
+        <img src={ windDark } className={ this.state.active1 ? 'sourceFilter-icons-active sourceFilter-icons pointer' : 'sourceFilter-icons pointer'} onClick = {() => { this.props.filterProjectsBySource('Wind'); this.toggleClassIcon1()}} />
+        <img src={ solarDark } className={ this.state.active2 ? 'sourceFilter-icons-active sourceFilter-icons pointer' : 'sourceFilter-icons pointer'} onClick = {() => { this.props.filterProjectsBySource('Solar'); this.toggleClassIcon2()}}/>
+        <img src={ hydroDark } className={ this.state.active3 ? 'sourceFilter-icons-active sourceFilter-icons pointer' : 'sourceFilter-icons pointer'} onClick = {() => { this.props.filterProjectsBySource('Hydro'); this.toggleClassIcon3()}}/>
+        <img src={ bioDark } className={ this.state.active4 ? 'sourceFilter-icons-active sourceFilter-icons pointer' : 'sourceFilter-icons pointer'} onClick = {() => { this.props.filterProjectsBySource('Bio'); this.toggleClassIcon4()}}/>
       </div>
     )
   }

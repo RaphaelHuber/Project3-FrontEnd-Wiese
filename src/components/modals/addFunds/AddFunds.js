@@ -61,7 +61,6 @@ class AddFunds extends Component {
                   <img className="invest-currencyIcon" src="../../../../public/img/icons/dollarSign.png" />
                   <Input 
                     type="Number"
-                    placeholder= '0'
                     value={this.state.addAmount}
                     onChange={e => this.handleChange(e)}
                   />

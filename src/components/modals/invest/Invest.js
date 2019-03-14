@@ -74,7 +74,13 @@ class Invest extends Component {
   }
 
   render() {
-    let creditWithCommas = this.numberWithCommas(this.props.userInSession.credit);
+    
+    let creditWithCommas;
+    if (this.props.userInSession.credit) {
+      creditWithCommas = this.numberWithCommas(this.props.userInSession.credit);
+    } else {
+      creditWithCommas = 0;
+    }
     
     return (
       <div>

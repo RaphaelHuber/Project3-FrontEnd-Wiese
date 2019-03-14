@@ -10,7 +10,8 @@ class projectsDisplay extends Component {
     super(props);
     this.state = {
       allProjects: [],
-      displayProjects: []
+      displayProjects: [],
+      filteredSource : 'None'
     }
     this.sortProjectsUp = this.sortProjectsUp.bind(this);
     this.sortProjectsDown = this.sortProjectsDown.bind(this);
@@ -19,7 +20,7 @@ class projectsDisplay extends Component {
   }
 
   sortProjectsUp(criteria) {
-    let sortedArray = this.state.allProjects.sort(function (a,b) {
+    let sortedArray = this.state.displayProjects.sort(function (a,b) {
       const critA = a[criteria];
       const critB = b[criteria];
       if (critA < critB) {
@@ -33,7 +34,7 @@ class projectsDisplay extends Component {
   }
 
   sortProjectsDown(criteria) {
-    let sortedArray = this.state.allProjects.sort(function (a,b) {
+    let sortedArray = this.state.displayProjects.sort(function (a,b) {
       const critA = a[criteria];
       const critB = b[criteria];
       if (critA < critB) {
@@ -47,8 +48,18 @@ class projectsDisplay extends Component {
   }
   
   filterProjectsBySource(source) {
-    let filteredArray = this.state.allProjects.filter(project => project.energySource === source);
-    this.setState({displayProjects: filteredArray});
+    if(source === this.state.filteredSource) {
+      this.setState({
+        displayProjects: this.state.allProjects,
+        filteredSource: 'None'
+      })
+    } else{
+      let filteredArray = this.state.allProjects.filter(project => project.energySource === source);
+      this.setState({
+        displayProjects: filteredArray,
+        filteredSource: source
+      });
+    }
   }
 
   filterProjectsByName(barInput) {

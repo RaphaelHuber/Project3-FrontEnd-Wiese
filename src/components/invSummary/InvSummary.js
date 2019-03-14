@@ -5,6 +5,10 @@ import Invest from '../modals/invest/Invest';
 import LogIn from '../modals/logIn/LogIn';
 
 class InvSummary extends Component {
+  numberWithCommas(numb) {
+    return numb.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+  
   render() {
 
     let summaryButton;
@@ -16,6 +20,13 @@ class InvSummary extends Component {
           <LogIn className="center" userInSession={this.props.loggedInUser} getUser={this.props.getUser}/>
           <span>Please log in to invest</span>
         </div>);
+    }
+
+    let targetWithCommas;
+    if (this.props.project.targetAmount) {
+      targetWithCommas = this.numberWithCommas(this.props.project.targetAmount);
+    } else {
+      targetWithCommas = 0;
     }
 
     let daysRemaining = 60;
@@ -30,7 +41,7 @@ class InvSummary extends Component {
               Target Sum:
             </div>
             <div className="center">
-              {`$ ${this.props.project.targetAmount}`}
+              {`$${targetWithCommas}`}
             </div>
           </div>
           <div className="containerCol invSummary-margin1">
@@ -49,7 +60,7 @@ class InvSummary extends Component {
               Return on Capital:
             </div>  
             <div className="invSummary-marginNum">
-            {this.props.project.expectedReturn * 100}%
+            {Math.floor(this.props.project.expectedReturn * 100)}%
             </div>  
           </Card.Text>
           <Card.Text className="containerRow">
