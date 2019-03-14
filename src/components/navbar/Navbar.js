@@ -3,7 +3,6 @@ import { Button, Navbar, Nav, Form, NavDropdown } from 'react-bootstrap';
 import './Navbar.css';
 import LogIn from '../modals/logIn/LogIn.js';
 import AuthService from '../auth/auth-service';
-import NavLink from 'react-bootstrap/NavLink';
 
 class OurNavbar extends Component {
   constructor(props){
@@ -20,7 +19,7 @@ class OurNavbar extends Component {
     this.service.logout()
     .then(() => {
       this.props.getUser(null); 
-      this.setState ({ logOutMessage: 'You have logged out successfully'});
+      this.setState({ logOutMessage: 'You have logged out successfully'});
       this.hideTimeout = setTimeout(() => this.setState({logOutMessage: ''}), 3500)
     })
   }

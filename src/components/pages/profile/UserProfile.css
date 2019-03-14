@@ -9,3 +9,7 @@
 .userProfile-marginTabContent {
   margin-top: 5.7vh;
 }
+
+.userProfile-confirmProfile {
+  margin: auto auto auto 15px;
+}

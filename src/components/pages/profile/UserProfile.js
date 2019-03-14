@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Button, Form, Col, Row, Nav, Tab  } from 'react-bootstrap';
-import { FormGroup, Label, Input } from 'reactstrap';
+import { Button, Form, Col, Row, Nav, Tab, FormText  } from 'react-bootstrap';
+import { FormGroup, Label, Input} from 'reactstrap';
 import './UserProfile.css';
 import AddFunds from '../../modals/addFunds/AddFunds';
 import axios from 'axios';
@@ -8,7 +8,10 @@ import axios from 'axios';
 class UserProfile extends Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      confirmationFunds: '',
+      confirmationProfile: ''
+    }
 
     this.updateCredit = this.updateCredit.bind(this);
     this.updateUser = this.updateUser.bind(this);
@@ -43,11 +46,25 @@ class UserProfile extends Component {
   
   updateCredit(newCredit) {
     this.setState({credit: newCredit})
+    this.setState({ confirmationFunds: 'You successfully added funds to your account'});
+    this.hideTimeout = setTimeout(() => this.setState({confirmationFunds: ''}), 4500)
+  }
+
+  validateEmail(text) {
+    const emailPattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return emailPattern.test(text);
   }
 
   updateUser() {
     const { email, name, document, birthDate, address, credit, bank, account } = this.state;
-    axios.patch(`http://localhost:5000/users/${this.props.userInSession._id}`, { email, name, document, birthDate, address, credit, bank, account });
+    if (this.validateEmail(email)) {
+      axios.patch(`http://localhost:5000/users/${this.props.userInSession._id}`, { email, name, document, birthDate, address, credit, bank, account });
+      this.setState({ confirmationProfile: 'Your profile details have been updated'});
+      this.hideTimeout = setTimeout(() => this.setState({confirmationProfile: ''}), 3500)
+    } else {
+      this.setState({ confirmationProfile: 'Please enter a valide E-Mail'});
+      this.hideTimeout = setTimeout(() => this.setState({confirmationProfile: ''}), 2500)
+    }
   }
 
   render() {
@@ -130,6 +147,7 @@ class UserProfile extends Component {
                         value={this.state.credit}
                         readOnly = {true}
                       />
+                      <FormText className="">{this.state.confirmationFunds}</FormText>
                       <AddFunds userID = {this.props.userInSession._id} oldCredit = {this.state.credit} updateCredit = {this.updateCredit}/>
                       <Label>Bank</Label>
                       <Input
@@ -150,7 +168,10 @@ class UserProfile extends Component {
                     </FormGroup>
                   </Tab.Pane>
                 </Tab.Content>
-                <Button variant="primary" onClick={this.updateUser}>Update</Button>
+                <div className="containerRow">
+                  <Button variant="primary" onClick={this.updateUser}>Update</Button>
+                  <div className="userProfile-confirmProfile">{this.state.confirmationProfile}</div>
+                </div>
               </Col>
             </Row>
           </Tab.Container>

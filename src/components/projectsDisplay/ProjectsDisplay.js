@@ -73,7 +73,6 @@ class projectsDisplay extends Component {
               return(<Col key={i} className="projectsDisplay-minWidth projectsDisplay-margin1 noPadding hvr-float" xs={4}><ProjectCard projectData = {project} /></Col>)
             })}
           </Row>
-          <Button className="projectDisplay-btnMargin1 btnSecondary center marginBtn1" variant="primary">Load More</Button>
         </div>
       </div>
     );
