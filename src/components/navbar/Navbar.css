@@ -1,0 +1,12 @@
+.navbar-username {
+  color: rgba(247, 255, 254, 1) ;
+}
+
+.navbar-username:hover {
+  color: rgba(2, 180, 168, 1);
+}
+
+.navbar-logOutMessage {
+  color: rgba(2, 180, 168, 1);
+  margin: auto 15px auto auto;
+}

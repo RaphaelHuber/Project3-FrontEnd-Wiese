@@ -1,0 +1,35 @@
+.projectsDisplay-minWidth {
+  min-width: 300px;
+}
+
+.projectsDisplay-margin1 {
+  margin-bottom: 2%;
+}
+
+.projectsDisplay-margin2 {
+  margin: auto 12% 6% 12%;
+}
+
+.projectDisplay-btnMargin1 {
+  margin: auto auto 5% auto;
+}
+
+
+/* Float */
+.hvr-float {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-float:hover, .hvr-float:focus, .hvr-float:active {
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
+}

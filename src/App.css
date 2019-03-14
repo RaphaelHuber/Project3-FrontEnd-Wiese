@@ -1,0 +1,95 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgba(247, 255, 254, 1) !important;
+}
+
+button {
+  background-color: rgba(2, 180, 168, 1) !important;
+  border: none !important;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.bgColorSecondary {
+  background-color: rgba(145, 234, 224, 1);
+}
+
+.btnBgColorSecondary {
+  background-color: rgba(145, 234, 224, 1) !important;
+}
+
+.nav-link.active {
+  background-color: rgba(2, 180, 168, 1) !important;
+}
+
+.nav-link:hover {
+  color: rgba(2, 180, 168, 1);
+}
+
+.nav-link {
+  color: rgba(2, 180, 168, 1);
+}
+
+.nav-item.active {
+  color: rgba(247, 255, 254, 1) !important;
+}
+
+
+.containerCol {
+  display: flex;
+  flex-direction: column !important;
+}
+
+.containerRow {
+  display: flex;
+  flex-direction: row !important;
+}
+
+.flexWrap {
+  display: flex;
+  flex-wrap: wrap; 
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.spaceEven {
+  display: flex;
+  justify-content: space-evenly !important;
+}
+.spaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+.noPadding {
+  padding: 0 !important;
+}
+
+.modalMargin1 {
+  margin-top: 12px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.authErrorMessage {
+  margin: auto auto auto 0 !important;
+}
+
+p {
+  margin-bottom: 0.4rem !important;
+}

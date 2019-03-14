@@ -1,0 +1,19 @@
+.energySymbols-mainContainer {
+  border: 3px solid rgba(145, 234, 224, 1);
+  border-radius: 10px;
+  width: 60%;
+  box-sizing: content-box;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  background-color: rgba(145, 234, 224, 0.25);
+  filter: blur(0.5px);
+}
+
+.energySybmols-icons {
+  width: 15%;
+  margin: 2% 5%;
+}
+
+
+/* margin-top: 15%;
+margin-bottom: 8%; */
