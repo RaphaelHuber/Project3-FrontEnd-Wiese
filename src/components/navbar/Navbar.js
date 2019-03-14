@@ -3,18 +3,25 @@ import { Button, Navbar, Nav, Form, NavDropdown } from 'react-bootstrap';
 import './Navbar.css';
 import LogIn from '../modals/logIn/LogIn.js';
 import AuthService from '../auth/auth-service';
+import NavLink from 'react-bootstrap/NavLink';
 
 class OurNavbar extends Component {
   constructor(props){
     super(props);
     this.service = new AuthService();
     this.logoutUser = this.logoutUser.bind(this);
+
+    this.state = {
+      logOutMessage: ''
+    }
   }
   
   logoutUser() {
     this.service.logout()
     .then(() => {
-      this.props.getUser(null);  
+      this.props.getUser(null); 
+      this.setState ({ logOutMessage: 'You have logged out successfully'});
+      this.hideTimeout = setTimeout(() => this.setState({logOutMessage: ''}), 3500)
     })
   }
   
@@ -37,9 +44,6 @@ class OurNavbar extends Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="#allProjects">
-              All projects
-            </Nav.Link>
             <NavDropdown title="My portfolio" id="collasible-nav-dropdown">
               <NavDropdown.Item href="/allProjects">
                 My investments
@@ -49,9 +53,12 @@ class OurNavbar extends Component {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Form inline>
-            {logStatus}
-          </Form>
+          <div className="containerRow">
+            <div className="navbar-logOutMessage navbar-bounce">{this.state.logOutMessage}</div>
+            <Form inline>
+              {logStatus}
+            </Form>
+          </div>
         </Navbar.Collapse>
       </Navbar>
     )

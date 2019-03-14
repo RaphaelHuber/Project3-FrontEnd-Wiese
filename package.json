@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/RaphaelHuber/Project3-FrontEnd-Wiese/issues"
   },
-  "homepage": "https://github.com/RaphaelHuber/Project3-FrontEnd-Wiese#readme",
+  "homepage": "./",
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",

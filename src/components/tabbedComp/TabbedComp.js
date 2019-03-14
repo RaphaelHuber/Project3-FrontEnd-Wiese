@@ -19,13 +19,13 @@ class TabbedComp extends Component {
           onSelect={key => this.setState({ key })}
         >
           <Tab eventKey="description" title="Description">
-            <p>{this.props.project.description}</p>
+            <div>{this.props.project.description}</div>
           </Tab>
           <Tab eventKey="projectOwner" title="Project Owner">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id faucibus nisl tincidunt eget nullam non nisi. Amet volutpat consequat mauris nunc congue nisi vitae suscipit. Ante in nibh mauris cursus. Imperdiet dui accumsan sit amet nulla. Aliquam faucibus purus in massa tempor. Neque egestas congue quisque egestas diam in. Adipiscing elit pellentesque habitant morbi tristique senectus. Aliquam etiam erat velit scelerisque in. Hendrerit gravida rutrum quisque non tellus orci ac auctor. In metus vulputate eu scelerisque felis imperdiet proin fermentum leo. </p>
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id faucibus nisl tincidunt eget nullam non nisi. Amet volutpat consequat mauris nunc congue nisi vitae suscipit. Ante in nibh mauris cursus. Imperdiet dui accumsan sit amet nulla. Aliquam faucibus purus in massa tempor. Neque egestas congue quisque egestas diam in. Adipiscing elit pellentesque habitant morbi tristique senectus. Aliquam etiam erat velit scelerisque in. Hendrerit gravida rutrum quisque non tellus orci ac auctor. In metus vulputate eu scelerisque felis imperdiet proin fermentum leo. </div>
           </Tab>
           <Tab eventKey="documents" title="Documents">
-            <p>Tincidunt praesent semper feugiat nibh sed pulvinar proin. Vestibulum sed arcu non odio euismod lacinia. Aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod. In hac habitasse platea dictumst. In pellentesque massa placerat duis ultricies lacus sed. Quam nulla porttitor massa id neque aliquam vestibulum morbi. Sed euismod nisi porta lorem mollis aliquam ut. Gravida cum sociis natoque penatibus et magnis.</p>
+            <div>Tincidunt praesent semper feugiat nibh sed pulvinar proin. Vestibulum sed arcu non odio euismod lacinia. Aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod. In hac habitasse platea dictumst. In pellentesque massa placerat duis ultricies lacus sed. Quam nulla porttitor massa id neque aliquam vestibulum morbi. Sed euismod nisi porta lorem mollis aliquam ut. Gravida cum sociis natoque penatibus et magnis.</div>
           </Tab>
         </Tabs>
       </div>
