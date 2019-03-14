@@ -58,7 +58,7 @@ class UserProfile extends Component {
   updateUser() {
     const { email, name, document, birthDate, address, credit, bank, account } = this.state;
     if (this.validateEmail(email)) {
-      axios.patch(`http://localhost:5000/users/${this.props.userInSession._id}`, { email, name, document, birthDate, address, credit, bank, account });
+      axios.patch(`${process.env.REACT_APP_API_URL}/users/${this.props.userInSession._id}`, { email, name, document, birthDate, address, credit, bank, account }, {withCredentials: true});
       this.setState({ confirmationProfile: 'Your profile details have been updated'});
       this.hideTimeout = setTimeout(() => this.setState({confirmationProfile: ''}), 3500)
     } else {

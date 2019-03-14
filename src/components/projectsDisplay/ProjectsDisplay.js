@@ -68,7 +68,7 @@ class projectsDisplay extends Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:5000/projects`)
+    axios.get(`${process.env.REACT_APP_API_URL}/projects`, {withCredentials: true})
       .then((response) => {
         this.setState({allProjects: response.data, displayProjects: response.data})
       })

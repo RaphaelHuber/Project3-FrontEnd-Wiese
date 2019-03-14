@@ -38,7 +38,7 @@ class AddFunds extends Component {
 
   handleFormSubmit(event) {
     let newCredit = this.props.oldCredit + parseInt(this.state.addAmount, 10);
-    axios.patch(`http://localhost:5000/users/${this.props.userID}`, { credit: newCredit });
+    axios.patch(`${process.env.REACT_APP_API_URL}/users/${this.props.userID}`, { credit: newCredit }, {withCredentials: true});
     this.props.updateCredit(newCredit);
     this.setState({addAmount: 0});
     this.handleClose();

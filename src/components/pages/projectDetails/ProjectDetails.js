@@ -20,7 +20,7 @@ class ProjectDetails extends Component {
   getSingleProject() {
     const { params } = this.props.match;
     console.log('params', params.id);
-    axios.get(`http://localhost:5000/projects/${params.id}`)
+    axios.get(`${process.env.REACT_APP_API_URL}/projects/${params.id}`, {withCredentials: true})
     .then((response) => {
       this.setState(response.data);
       const uniqueInvestors = this.countUniqueInvestors(response.data.investments)

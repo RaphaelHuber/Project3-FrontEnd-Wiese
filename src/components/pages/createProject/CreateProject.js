@@ -38,7 +38,7 @@ class CreateProject extends Component {
 
   createNewProject() {
     const { owner, name, country, energySource, description, minimumAmount, targetAmount, minimumInvestment, expectedReturn, investmentPeriod, paymentPeriod, periodicity, picture } = this.state;
-    axios.post(`http://localhost:5000/projects`, { owner, name, country, energySource, description, minimumAmount, targetAmount, minimumInvestment, expectedReturn, investmentPeriod,paymentPeriod, periodicity, picture });
+    axios.post(`${process.env.REACT_APP_API_URL}/projects`, { owner, name, country, energySource, description, minimumAmount, targetAmount, minimumInvestment, expectedReturn, investmentPeriod,paymentPeriod, periodicity, picture }, {withCredentials: true});
     this.setState({redirect: true});
   }
 

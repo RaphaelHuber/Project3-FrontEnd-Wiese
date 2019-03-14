@@ -45,7 +45,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'public'),
     port: 8080,
-    publicPath: "http://localhost:8080/dist",
+    publicPath: `${process.env.REACT_APP_API_URL}/dist`,
     hot: true,
     historyApiFallback: {
       index: 'index.html'
