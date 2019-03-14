@@ -9,6 +9,8 @@ class ProjectDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {}
+
+    this.getSingleProject = this.getSingleProject.bind(this);
   }
 
   componentDidMount() {
@@ -35,8 +37,20 @@ class ProjectDetails extends Component {
     });
     return new Set(investors).size;
   }
+
+  numberWithCommas(numb) {
+    return numb.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
   
   render() {
+
+    let raisedWithCommas;
+    if (this.state.raisedAmount) {
+      raisedWithCommas = this.numberWithCommas(this.state.raisedAmount);
+    } else {
+      raisedWithCommas = 0;
+    }
+
     // makes sure that the image src is rendered when existing
     const imgSrc = (this.state.picture) ? this.state.picture : "";
     return (
@@ -45,9 +59,9 @@ class ProjectDetails extends Component {
           <img className="projectDetails-img" src={imgSrc}/>
           <div className="projectDetails-float">
             <div className="containerRow projectDetails-align">
-              <img className="projectDetails-icons" src="../../../../public/img/icons/RoundLight.png"></img>
-              <p>{`$ ${this.state.raisedAmount}`}</p>
-              <img className="projectDetails-icons" src="../../../../public/img/icons/RoundLight.png"></img>
+              <img className="projectDetails-icons" src="/img/icons/RoundLight.png"></img>
+              <p>{`$${raisedWithCommas}`}</p>
+              <img className="projectDetails-icons" src="/img/icons/RoundLight.png"></img>
               <p>{this.state.uniqueInvestors} investors</p>
             </div>
             <InvProgress project={this.state}/>
@@ -55,7 +69,7 @@ class ProjectDetails extends Component {
         </div>
         <div className="projectDetails-infoBox containerRow flexWrap">
           <TabbedComp project={this.state} />
-          <InvSummary project={this.state} userInSession={this.props.userInSession} getUser = {this.props.getUser}updateUser = {this.props.updateUser}/>
+          <InvSummary project={this.state} userInSession={this.props.userInSession} getUser = {this.props.getUser}updateUser = {this.props.updateUser} getSingleProject={this.getSingleProject}/>
         </div>
       </div>
     );

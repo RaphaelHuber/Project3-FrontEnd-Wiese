@@ -24,7 +24,7 @@ class projectCard extends React.Component {
             <Link to={`/projectDetails/${this.props.projectData._id}`}>
               <Button variant="primary">More Details</Button>
             </Link>
-            <img className="projectCard-sourceIcon" src={`../../../../public/img/icons/${this.props.projectData.energySource}Colored.png`}/>
+            <img className="projectCard-sourceIcon" src={ `/img/icons/${this.props.projectData.energySource}Colored.png` }/>
             </div>
             </Card.Body>
             </Card>

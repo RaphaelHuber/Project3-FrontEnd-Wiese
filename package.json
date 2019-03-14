@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server --progress --color",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --open --mode development --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -60,6 +60,7 @@ class Invest extends Component {
     .then((response) => {
         this.setState({ investor: '', project: '', invAmount: '' });
         this.props.updateUser();
+        this.props.getSingleProject();
         this.handleClose();
       })
       .catch(error => console.log(error));

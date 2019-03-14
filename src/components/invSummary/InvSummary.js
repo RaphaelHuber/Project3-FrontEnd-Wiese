@@ -10,7 +10,7 @@ class InvSummary extends Component {
     let summaryButton;
     if (this.props.userInSession) {
       summaryButton = 
-        <Invest data={this.props.project} userInSession={this.props.userInSession} updateUser = {this.props.updateUser}/>
+        <Invest data={this.props.project} userInSession={this.props.userInSession} updateUser = {this.props.updateUser} getSingleProject={this.props.getSingleProject}/>
     } else {
       summaryButton = (<div>
           <LogIn className="center" userInSession={this.props.loggedInUser} getUser={this.props.getUser}/>
