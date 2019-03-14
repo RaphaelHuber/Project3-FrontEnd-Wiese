@@ -25,7 +25,7 @@ class UserProfile extends Component {
 
       const address = nextProps.userInSession.address ? nextProps.userInSession.address : '';
 
-      const credit = nextProps.userInSession.credit ? nextProps.userInSession.credit : '';
+      const credit = nextProps.userInSession.credit ? nextProps.userInSession.credit : 0;
 
       const bank = nextProps.userInSession.bank ? nextProps.userInSession.bank : '';
 
@@ -62,10 +62,10 @@ class UserProfile extends Component {
               <Col sm={3}>
                 <Nav variant="pills" className="flex-column userProfile-marginTabs">
                   <Nav.Item>
-                    <Nav.Link eventKey="first">Personal Informations</Nav.Link>
+                    <Nav.Link eventKey="first">Personal Information</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="second">Financials Details</Nav.Link>
+                    <Nav.Link eventKey="second">Financial Details</Nav.Link>
                   </Nav.Item>
                 </Nav>
               </Col>

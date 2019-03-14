@@ -4,18 +4,30 @@ import { Link } from 'react-router-dom';
 import './projectCard.css';
 
 class projectCard extends React.Component {
+  
+  numberWithCommas(numb) {
+    return numb.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+  
   render() {
+
+    let targetWithCommas;
+    if (this.props.projectData.targetAmount) {
+      targetWithCommas = this.numberWithCommas(this.props.projectData.targetAmount);
+    } else {
+      targetWithCommas = 0;
+    }
+
     return (
       <Card className="projectCard-margin2">
         <Card.Img className="projectCard-img" variant="top" src={ this.props.projectData.picture } />
         <Card.Body>
           <Card.Title className="projectCard-btmMargin">{this.props.projectData.name}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">{this.props.projectData.country} - {this.props.projectData.owner.username}</Card.Subtitle>
-          <Card.Text><strong>Target: </strong> {`$ 
-          ${this.props.projectData.targetAmount} (min inv of $ ${this.props.projectData.minimumInvestment})`}
+          <Card.Text><strong>Target: </strong> {`$${targetWithCommas} ($${this.props.projectData.minimumInvestment} min.)`}
           </Card.Text>
           <Card.Text><strong>Return: </strong>
-          {`${this.props.projectData.expectedReturn} %`}
+          {`${Math.floor(this.props.projectData.expectedReturn * 100)}%`}
           </Card.Text>
           <Card.Text className="projectCard-overflow">
           {this.props.projectData.description}
