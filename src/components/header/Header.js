@@ -8,7 +8,7 @@ class Header extends Component {
   render() {
     return (
       <div className="containerCol header">
-        <div className="header-slogan">Let your investment shape a future worth investing in.</div>
+        <div className="header-slogan">Shape a future worth investing in</div>
         <EnergySymbols/>
         <SignUp className="center" userInSession={this.props.loggedInUser} getUser={this.props.getUser}/>
       </div>
