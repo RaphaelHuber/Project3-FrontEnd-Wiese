@@ -3,6 +3,12 @@
 }
 
 .sourceFilter-icons {
-  width: 12%;
-  height: 12%;
+  width: 14%;
+  height: 14%;
+  padding: 4px;
+}
+
+.sourceFilter-icons-active {
+  background-color: rgba(2, 180, 168, .3);
+  border-radius: 4px;
 }
