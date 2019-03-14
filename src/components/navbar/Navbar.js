@@ -19,7 +19,7 @@ class OurNavbar extends Component {
     this.service.logout()
     .then(() => {
       this.props.getUser(null); 
-      this.setState({ logOutMessage: 'You have logged out successfully'});
+      this.setState({ logOutMessage: 'You have successfully been logged out'});
       this.hideTimeout = setTimeout(() => this.setState({logOutMessage: ''}), 3500)
     })
   }
@@ -53,7 +53,7 @@ class OurNavbar extends Component {
             </NavDropdown>
           </Nav>
           <div className="containerRow">
-            <div className="navbar-logOutMessage navbar-bounce">{this.state.logOutMessage}</div>
+            <div className="navbar-logOutMessage">{this.state.logOutMessage}</div>
             <Form inline>
               {logStatus}
             </Form>
