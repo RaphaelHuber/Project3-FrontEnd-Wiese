@@ -1,9 +1,10 @@
 import axios from 'axios';
+import API_URL from '../../config.js';
 
 class InvService {
   constructor() {
     let service = axios.create({
-      baseURL: `${process.env.REACT_APP_API_URL}/investments`,
+      baseURL: `${API_URL}/investments`,
       withCredentials: true
     });
     this.service = service;

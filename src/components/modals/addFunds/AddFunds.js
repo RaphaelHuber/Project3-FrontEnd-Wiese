@@ -3,6 +3,7 @@ import '../invest/Invest.css';
 import { Button, Modal, Form } from 'react-bootstrap';
 import { Col, FormGroup, Label, Input} from 'reactstrap';
 import axios from 'axios';
+import API_URL from '../../../config.js';
 
 class AddFunds extends Component {
   constructor(props) {
@@ -38,7 +39,7 @@ class AddFunds extends Component {
 
   handleFormSubmit(event) {
     let newCredit = this.props.oldCredit + parseInt(this.state.addAmount, 10);
-    axios.patch(`${process.env.REACT_APP_API_URL}/users/${this.props.userID}`, { credit: newCredit }, {withCredentials: true});
+    axios.patch(`${API_URL}/users/${this.props.userID}`, { credit: newCredit }, {withCredentials: true});
     this.props.updateCredit(newCredit);
     this.setState({addAmount: 0});
     this.handleClose();

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Card } from 'react-bootstrap';
 import './InvSummary.css';
-import Invest from '../modals/invest/Invest';
-import LogIn from '../modals/logIn/LogIn';
+import Invest from '../modals/invest/Invest.js';
+import LogIn from '../modals/logIn/LogIn.js';
+import SignUp from '../modals/signUp/SignUp.js';
 
 class InvSummary extends Component {
   numberWithCommas(numb) {
@@ -16,9 +17,10 @@ class InvSummary extends Component {
       summaryButton = 
         <Invest data={this.props.project} userInSession={this.props.userInSession} updateUser = {this.props.updateUser} getSingleProject={this.props.getSingleProject}/>
     } else {
-      summaryButton = (<div>
+      summaryButton = (
+        <div className="invSummary-logInMargin containerCol">
           <LogIn className="center" userInSession={this.props.loggedInUser} getUser={this.props.getUser}/>
-          <span>Please log in to invest</span>
+          <span>Please log in or sign up to invest</span>
         </div>);
     }
 

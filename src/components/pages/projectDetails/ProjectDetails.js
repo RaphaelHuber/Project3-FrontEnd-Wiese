@@ -4,6 +4,7 @@ import './ProjectDetails.css';
 import InvProgress from '../../invProgress/InvProgress.js'
 import TabbedComp from '../../tabbedComp/TabbedComp.js';
 import InvSummary from '../../invSummary/InvSummary.js'
+import API_URL from '../../../config.js';
 
 class ProjectDetails extends Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class ProjectDetails extends Component {
   getSingleProject() {
     const { params } = this.props.match;
     console.log('params', params.id);
-    axios.get(`${process.env.REACT_APP_API_URL}/projects/${params.id}`, {withCredentials: true})
+    axios.get(`${API_URL}/projects/${params.id}`, {withCredentials: true})
     .then((response) => {
       this.setState(response.data);
       const uniqueInvestors = this.countUniqueInvestors(response.data.investments)
@@ -60,10 +61,10 @@ class ProjectDetails extends Component {
           <img className="projectDetails-img" src={imgSrc}/>
           <div className="projectDetails-float">
             <div className="containerRow projectDetails-align">
-              <img className="projectDetails-icons" src="/img/icons/RoundLight.png"></img>
-              <p>{`$${raisedWithCommas}`}</p>
-              <img className="projectDetails-icons" src="/img/icons/RoundLight.png"></img>
-              <p>{this.state.uniqueInvestors} investors</p>
+              <img className="projectDetails-iconsMargin projectDetails-icons1" src="/img/icons/MoneyBagWhite.png"></img>
+              <div>{`$${raisedWithCommas}`}</div>
+              <img className="projectDetails-iconsMargin projectDetails-icons2" src="/img/icons/InvestorsWhite.png"></img>
+              <div>{this.state.uniqueInvestors} investors</div>
             </div>
             <InvProgress project={this.state}/>
           </div>

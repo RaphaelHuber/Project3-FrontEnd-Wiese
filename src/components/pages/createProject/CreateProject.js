@@ -3,6 +3,7 @@ import { Redirect } from 'react-router';
 import { Button, Form } from 'react-bootstrap';
 import { Col, FormGroup, Label, Input} from 'reactstrap';
 import axios from 'axios';
+import API_URL from '../../../config.js';
 
 class CreateProject extends Component {
   constructor(props) {
@@ -38,7 +39,7 @@ class CreateProject extends Component {
 
   createNewProject() {
     const { owner, name, country, energySource, description, minimumAmount, targetAmount, minimumInvestment, expectedReturn, investmentPeriod, paymentPeriod, periodicity, picture } = this.state;
-    axios.post(`${process.env.REACT_APP_API_URL}/projects`, { owner, name, country, energySource, description, minimumAmount, targetAmount, minimumInvestment, expectedReturn, investmentPeriod,paymentPeriod, periodicity, picture }, {withCredentials: true});
+    axios.post(`${API_URL}/projects`, { owner, name, country, energySource, description, minimumAmount, targetAmount, minimumInvestment, expectedReturn, investmentPeriod,paymentPeriod, periodicity, picture }, {withCredentials: true});
     this.setState({redirect: true});
   }
 

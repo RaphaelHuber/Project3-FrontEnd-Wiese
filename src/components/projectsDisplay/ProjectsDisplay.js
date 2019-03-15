@@ -4,6 +4,7 @@ import ProjectCard from './projectCard/projectCard';
 import { Row, Col, Button } from 'react-bootstrap';
 import './ProjectsDisplay.css';
 import Filter from '../filter/Filter';
+import API_URL from '../../config.js';
 
 class projectsDisplay extends Component {
   constructor(props){
@@ -68,7 +69,7 @@ class projectsDisplay extends Component {
   }
 
   componentDidMount() {
-    axios.get(`${process.env.REACT_APP_API_URL}/projects`, {withCredentials: true})
+    axios.get(`${API_URL}/projects`, {withCredentials: true})
       .then((response) => {
         this.setState({allProjects: response.data, displayProjects: response.data})
       })

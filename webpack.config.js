@@ -45,7 +45,8 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'public'),
     port: 8080,
-    publicPath: `${process.env.REACT_APP_API_URL}/dist`,
+    // publicPath: `http://localhost:5000/dist`,
+    publicPath: `https://wiese.herokuapp.com`,
     hot: true,
     historyApiFallback: {
       index: 'index.html'

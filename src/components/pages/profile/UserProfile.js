@@ -4,6 +4,7 @@ import { FormGroup, Label, Input} from 'reactstrap';
 import './UserProfile.css';
 import AddFunds from '../../modals/addFunds/AddFunds';
 import axios from 'axios';
+import API_URL from '../../../config.js';
 
 class UserProfile extends Component {
   constructor(props) {
@@ -58,7 +59,7 @@ class UserProfile extends Component {
   updateUser() {
     const { email, name, document, birthDate, address, credit, bank, account } = this.state;
     if (this.validateEmail(email)) {
-      axios.patch(`${process.env.REACT_APP_API_URL}/users/${this.props.userInSession._id}`, { email, name, document, birthDate, address, credit, bank, account }, {withCredentials: true});
+      axios.patch(`${API_URL}/users/${this.props.userInSession._id}`, { email, name, document, birthDate, address, credit, bank, account }, {withCredentials: true});
       this.setState({ confirmationProfile: 'Your profile details have been updated'});
       this.hideTimeout = setTimeout(() => this.setState({confirmationProfile: ''}), 3500)
     } else {
