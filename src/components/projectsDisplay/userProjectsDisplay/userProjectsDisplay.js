@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import ProjectCard from '../../projectsDisplay/projectCard/projectCard';
-import { Row, Col, Button } from 'react-bootstrap';
-import '../../projectsDisplay/ProjectsDisplay.css';
+import ProjectCard from '../projectCard/projectCard';
+import { Row, Col } from 'react-bootstrap';
+import '../ProjectsDisplay.css';
 import Filter from '../../filter/Filter';
-import { Link } from 'react-router-dom';
 
-class MyProjects extends Component {
+class UserProjectsDisplay extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -68,44 +66,26 @@ class MyProjects extends Component {
     this.setState({displayProjects: filteredArray});
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.getUserProjects(nextProps.userInSession._id);
-  }
-
   componentDidUpdate(prevProps){
-    if (this.props.userInSession !== prevProps.userInSession) {
-      this.getUserProjects(this.props.userInSession._id);
+    if (this.props.userProjects !== prevProps.userProjects) {
+      this.setState({allProjects: this.props.userProjects, displayProjects: this.props.userProjects})
     }
   };
 
-  getUserProjects(userID) {
-    axios.get(`http://localhost:5000/projects/myProjects/${userID}`)
-      .then((response) => {
-        this.setState({allProjects: response.data, displayProjects: response.data})
-      })
-  }  
-
   render() {
-    if(this.props.userInSession){
-      return (
-        <div id="allProjects">
-          <Filter sortProjectsUp = {this.sortProjectsUp} sortProjectsDown = {this.sortProjectsDown} filterProjectsBySource = {this.filterProjectsBySource} filterProjectsByName = {this.filterProjectsByName}/>
-          <div className="flexWrap projectsDisplay-margin2">
-            <Row>
-              {this.state.displayProjects && this.state.displayProjects.map((project, i) => {
-                return(<Col key={i} className="projectsDisplay-minWidth projectsDisplay-margin1 noPadding hvr-float" xs={4}><ProjectCard projectData = {project} /></Col>)
-              })}
-            </Row>
-            <div>
-            <Link to='/createProject'><Button variant="primary">New project</Button></Link>
-            </div>
-          </div>
+    return (
+      <div id="allProjects">
+        <Filter sortProjectsUp = {this.sortProjectsUp} sortProjectsDown = {this.sortProjectsDown} filterProjectsBySource = {this.filterProjectsBySource} filterProjectsByName = {this.filterProjectsByName}/>
+        <div className="flexWrap projectsDisplay-margin2">
+          <Row>
+            {this.state.displayProjects && this.state.displayProjects.map((project, i) => {
+              return(<Col key={i} className="projectsDisplay-minWidth projectsDisplay-margin1 noPadding hvr-float" xs={4}><ProjectCard projectData = {project} /></Col>)
+            })}
+          </Row>
         </div>
-      );
-    } else {
-      return <h1>Please log in</h1>
-    }
+      </div>
+    );
   }
 }
 
-export default MyProjects;
+export default UserProjectsDisplay;

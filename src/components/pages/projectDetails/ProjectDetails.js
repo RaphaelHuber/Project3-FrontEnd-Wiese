@@ -19,7 +19,6 @@ class ProjectDetails extends Component {
 
   getSingleProject() {
     const { params } = this.props.match;
-    console.log('params', params.id);
     axios.get(`http://localhost:5000/projects/${params.id}`)
     .then((response) => {
       this.setState(response.data);
